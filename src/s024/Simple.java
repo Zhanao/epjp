@@ -1,9 +1,9 @@
 /*
  * A simple Java source file
  */
-package s024;
+package s024; //insieme di classi che hanno qualcosa in comune, serve solo per tenere ordinato
 
-import java.lang.Math; // not required
+import java.lang.Math; // a volte mi serve una classe che appartiene ad un altro package, quindi lo importo
 
 /**
  * @author manny
