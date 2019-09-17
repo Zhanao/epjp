@@ -5,11 +5,15 @@ public class AboutString {
         String s = "hello";
         String t = "world";
         String u = "or";
+        System.out.println("char a:"+ (int) 'a'); //stampa il codice di a
+        System.out.println("char a:"+ (int) 'A'); //stampa il codice di A
+        int diff = 'a'-'A'; //calcola la differenza tra upper e lower
+        System.out.println("Gap Lower-Upper:"+ diff);
         System.out.println("s, t, u: " + s + ", " + t + ", " + u);
 
         System.out.println("char at position 1 in s: " + s.charAt(1));
 
-        System.out.println("s < t: " + s.compareTo(t));
+        System.out.println("s < t: " + s.compareTo(t)); //paragona 
         System.out.println("t > s: " + t.compareTo(s));
 
         System.out.println("concat s and t: " + s.concat(t));
@@ -24,6 +28,7 @@ public class AboutString {
         System.out.println("u == u2? " + (u == u2));
 
         System.out.println("First index of 'l' is s: " + s.indexOf('l'));
+        System.out.println("First index of 'l' is s: " + u.indexOf('l'));
         System.out.println("Last index of 'l' is s: " + s.lastIndexOf('l'));
         System.out.println("there is no 'x' in s: " + s.indexOf('x'));
         System.out.println("in s \"ll\" starts at " + s.indexOf("ll"));
