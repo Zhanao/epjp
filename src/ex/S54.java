@@ -132,33 +132,35 @@ public class S54 {
 	public static int[] sort(int a, int b, int c) {
 		int[] result = new int[3];
 		if (a > b) {
-			if (b > c) {
+			if (b >= c) {
 				result[0] = c;
 				result[1] = b;
 				result[2] = a;
-			} else {
+			} else if(b<c && a>=c){
 				result[0] = b;
 				result[1] = c;
 				result[2] = a;
+			}else if(b<c && a<c) {
+				result[0] = b;
+				result[1] = a;
+				result[2] = c;
 			}
 		} else if (a < b){
-			if (a > c) {
+			if (a >= c) {
 				result[0] = c;
 				result[1] = a;
 				result[2] = b;
-			} else if(a < c) {
-				if (c < b) {
-					result[0] = a;
-					result[1] = c;
-					result[2] = b;
-				}else {
+			} else if(a < c && c>=b) {
 					result[0] = a;
 					result[1] = b;
 					result[2] = c;
+				}else if(a < c && c<b){
+					result[0] = a;
+					result[1] = c;
+					result[2] = b;
 				}
 				
-			}
-		}else if (a==b){
+			} else if (a==b){
 			if (b > c) {
 				result[0] = c;
 				result[1] = b;

@@ -86,11 +86,11 @@ class S54Test {
 
     @Test
     void sortPlain() {
-        int[] actual = S54.sort(3, 2, 1);
+        int[] actual = S54.sort(3, 3, 1);
 
         assertThat(actual.length, is(3));
         assertThat(actual[0], is(1));
-        assertThat(actual[1], is(2));
+        assertThat(actual[1], is(3));
         assertThat(actual[2], is(3));
     }
 }
