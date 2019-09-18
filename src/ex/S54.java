@@ -130,7 +130,7 @@ public class S54 {
 	 * @return a sorted array
 	 */
 	public static int[] sort(int a, int b, int c) {
-		int[] result = new int[3];
+	/*	int[] result = new int[3];
 		if (a > b) {
 			if (b >= c) {
 				result[0] = c;
@@ -174,5 +174,23 @@ public class S54 {
 		}
 
 		return result;
+*/		
+		int[] result = {a,b,c};
+		int max = Math.max(Math.max(a, b),c);
+		result[2]=max;
+		int min = Math.min(Math.min(a, b), c);
+		result[0]=min;
+		if (a!=max && a!=min) {
+		result[1]=a;
+		}
+		if (b!=max && b!=min) {
+			result[1]=b;
+			}
+		if (c!=max && c!=min) {
+			result[1]=c;
+			}
+		
+		return result;
+		
 	}
 }
