@@ -11,7 +11,11 @@ public class EsProfe {
     }
 
     public static String toUpper(String s) {
-        StringBuilder sb = new StringBuilder(s.length());
+    	if (s == null) {
+    		return null;
+    	}
+    	//questo 'if' serve per controllare che la stringa non sia nulla così da passare il test
+    	StringBuilder sb = new StringBuilder(s.length());
 
         for (int i = 0; i < s.length(); i++) {
             char cur = s.charAt(i);

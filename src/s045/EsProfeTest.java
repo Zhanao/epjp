@@ -16,5 +16,17 @@ class EsProfeTest {
 		String result = EsProfe.toUpper(null); //EsProfe è la classe del main del codice
 		assertNull(result);
 	}
+	
+	@Test
+	void testEmpty() {
+		String result = EsProfe.toUpper("");
+		assertTrue(result.isEmpty());
+	}
+	
+	@Test
+	void testBob() {
+		String result = EsProfe.toUpper("Bob");
+		assertEquals("BOB", result);
+	}
 
 }

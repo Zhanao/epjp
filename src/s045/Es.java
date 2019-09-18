@@ -14,8 +14,13 @@ public class Es {
     // se togliamo lo static allora dobbiamo scrivere System.out.println("My toUpper(): " + es.toUpper("Bob"));
     }
 
-    public static String toUpper(String s) { //se tolgo 'static' è diventato di istanza
-        StringBuilder sb = new StringBuilder(s.length()); //facciamo così per non creare altre stringhe e quindi non allochiamo spazio per nulla
+    public static String toUpper(String s) {//se tolgo 'static' è diventato di istanza
+    	if (s == null) {
+    		return null;
+    	}
+    	//questo 'if' serve per controllare che la stringa non sia nulla così da passare il test
+    	
+    	StringBuilder sb = new StringBuilder(s.length()); //facciamo così per non creare altre stringhe e quindi non allochiamo spazio per nulla
 
         for (int i = 0; i < s.length(); i++) {
             char cur = s.charAt(i);
