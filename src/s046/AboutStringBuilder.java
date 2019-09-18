@@ -8,7 +8,7 @@ public class AboutStringBuilder {
         
         System.out.println("capacity 1: " + sb.capacity());
         System.out.println("capacity 2: " + sb2.capacity());
-        System.out.println("capacity 3: " + sb3.capacity());
+        System.out.println("capacity 3: " + sb3.capacity()); //16+5
         
         System.out.println("appending: " + sb3.append(' ').append("world"));
         

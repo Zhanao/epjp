@@ -107,7 +107,7 @@ public class S55 {
         int[][] result = new int[value][value];
         for(int i =1 ; i< value +1; i++) {
         	for(int j=1; j< value + 1;j++) {
-        		result[i][j]=i*j ;
+        		result[i-1][j-1]=i*j ;
         		
         }
         		

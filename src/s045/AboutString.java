@@ -2,7 +2,7 @@ package s045;
 
 public class AboutString {
     public static void main(String[] args) {
-        String s = "hello";
+        String s = new String("hello");
         String t = "world";
         String u = "or";
         System.out.println("s, t, u: " + s + ", " + t + ", " + u);
