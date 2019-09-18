@@ -50,7 +50,7 @@ public class EsVer2 {
         for (int i = 0; i < s.length(); i++) {
         	char cur = s.charAt(i);
             if ( cur >= 'a' &&  cur <= 'z') {
-            	sb3.insert(i, cur);
+            	sb3.insert(i, (char) (cur - GAP));
             }
             else { 
             	sb3.insert(i, cur);
