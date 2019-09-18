@@ -56,6 +56,13 @@ class S53Test {
 
         assertThat(actual, is(0));
     }
+    
+    @Test
+    void digitSumTwoDigit() {
+        int actual = S53.digitSum(-23);
+
+        assertThat(actual, is(5));
+    }
 
     @Test
     void digitSumNegative() {
@@ -63,5 +70,47 @@ class S53Test {
 
         assertThat(actual, is(6));
     }
+    
+    @Test
+    void digitSumOver() {
+        int actual = S53.digitSum(-1238);
+
+        assertThat(actual, is(-1));
+    }
+    
+//    @Test
+//    void digitSumTruePositive() {
+//        int actual = S53.digitSumTrue(123);
+//
+//        assertThat(actual, is(6));
+//    }
+//
+//    @Test
+//    void digitSumTrueZero() {
+//        int actual = S53.digitSumTrue(0);
+//
+//        assertThat(actual, is(0));
+//    }
+//    
+//    @Test
+//    void digitSumTrueTwoDigit() {
+//        int actual = S53.digitSumTrue(-23);
+//
+//        assertThat(actual, is(5));
+//    }
+//
+//    @Test
+//    void digitSumTrueNegative() {
+//        int actual = S53.digitSumTrue(-123);
+//
+//        assertThat(actual, is(6));
+//    }
+//    
+//    @Test
+//    void digitSumTrueOver() {
+//        int actual = S53.digitSumTrue(-1238);
+//
+//        assertThat(actual, is(-1));
+//    }
 
 }

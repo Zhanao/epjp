@@ -5,6 +5,11 @@ public class ParameterPassing {
         parameter += 1;
         System.out.println("parameter is " + parameter);
     }
+    
+    static void reference(String parameter) {
+    	String x = "hello";
+    	System.out.println(x.toUpperCase());
+    }
 
     static void immutableReference(String parameter) {
         if (parameter == null) {

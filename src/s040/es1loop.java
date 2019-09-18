@@ -13,9 +13,9 @@ public class es1loop {
 		System.out.println("Valori cambiati in 'true'");
 
 		for (int i = 0; i < flags.length; i++) {
-			if (flags[i] == false) {
+			if (flags[i] == false) { //la condizione può essere "!flags[i]"
 				flags[i] = true;
-			} else
+			} else // non serve
 				continue;
 		}
 
@@ -32,6 +32,13 @@ public class es1loop {
 			} else {
 				System.out.println(b);
 			}
+		}
+		
+		System.out.println("Ristampiamo i valori dell'array, "
+				+ "che non sarà cambiato");
+		
+		for (boolean b : flags) {
+			System.out.println(b);
 		}
 	}
 

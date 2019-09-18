@@ -8,8 +8,16 @@ public class S54 {
      * @return "positive", "negative", or "zero"
      */
     public static String checkSign(int value) {
-        // TODO
-        return "";
+    	if (value > 0) {
+    		return "positive";
+    	} 
+    	
+    	if (value < 0) {
+    		return "negative";
+    	}
+    	
+    	else return "zero";
+        
     }
     
     /**
@@ -19,7 +27,9 @@ public class S54 {
      * @return "odd" or "even"
      */
     public static boolean isOdd(int value) {
-        // TODO
+        if (value % 2 == 1) {
+        	return true;
+        }
         return false;
     }
     
@@ -30,8 +40,17 @@ public class S54 {
      * @return "zero" for 0 ... "nine" for 9, or "other"
      */
     public static String asWord(int value) {
-        // TODO
-        return "";
+        if (value > 9) {return "other";}
+        if (value == 1) {return "one";}
+        if (value == 2) {return "two";}
+        if (value == 3) {return "three";}
+        if (value == 4) {return "four";}
+        if (value == 5) {return "five";}
+        if (value == 6) {return "six";}
+        if (value == 7) {return "seven";}
+        if (value == 8) {return "eight";}
+        if (value == 9) {return "nine";}
+        return "zero";
     }
     
     /**
@@ -46,7 +65,11 @@ public class S54 {
      * @return a letter in [A, F]
      */
     public static char vote(double percentile) {
-        // TODO
+        if (percentile > 90) {return 'A';}
+        if (percentile > 80 && percentile <= 90) {return 'B';}
+        if (percentile > 70 && percentile <= 80) {return 'C';}
+        if (percentile > 60 && percentile <= 70) {return 'D';}
+        if (percentile > 50 && percentile <= 60) {return 'E';}
         return 'F';
     }
     
@@ -57,7 +80,12 @@ public class S54 {
      * @return true if leap year
      */
     public static boolean isLeapYear(int year) {
-        // TODO
+        if (year % 4 == 0) {
+        	if (((int) year/100) % 4 == 0) {
+        		return true;
+        	}
+        	return false;
+        }
         return false;
     }
     
@@ -71,8 +99,48 @@ public class S54 {
      */
     public static int[] sort(int a, int b, int c) {
         int[] result = new int[3];
+//        result[0] = Math.min(a, Math.min(b, c));
+//        result[2] = Math.max(a, Math.max(b, c));
         
-        // TODO
+        if (a <= b && a <= c) {
+        	result[0] = a;
+        	if (b <= c) {result[1] = b;
+        	result[2] = c;}
+        	else {
+        		{result[1] = c;
+            	result[2] = b;}
+        	}
+        	}
+        
+        if (b <= a && a <= c) {
+        	result[0] = b;
+        	if (a <= c) {result[1] = a;
+        	result[2] = c;}
+        	else {
+        		{result[1] = c;
+            	result[2] = a;}
+        	}
+        	}
+        
+        if (c <= a && c <= b) {
+        	result[0] = c;
+        	if (a <= b) {result[1] = a;
+        	result[2] = b;}
+        	else {
+        		{result[1] = b;
+            	result[2] = a;}
+        	}
+        	}
+        
+        
+//        if (result[0] <= a && result[2] >= a) {
+//        	result[1] = a;
+//        }
+//        if (result[0] <= b && result[2] >= b) {
+//        	result[1] = b;
+//        }
+//        else {result[1] = c;}
+        
         
         return result;
     }
