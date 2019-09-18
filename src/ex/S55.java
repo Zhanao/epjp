@@ -9,8 +9,14 @@ public class S55 {
      * @return the sum of all the numbers, or zero
      */
     public static long sum(int first, int last) {
-        // TODO
-        return 0;
+    	long summation = 0;
+    	
+    	while (first <= last) {
+    		summation = summation + first;
+    		first = first +1;
+    	}
+
+    	return summation;
     }
 
     /**
@@ -21,8 +27,24 @@ public class S55 {
      * @return the sum of all the even numbers, or zero
      */
     public static long evenSum(int first, int last) {
-        // TODO
-        return 0;
+    	long summation = 0;
+    	
+    	while (first <= last) {
+    		if (first % 2 == 0) {
+    		summation = summation + first;
+    		first = first + 2;
+    		}
+    		else {
+    			first = first + 1;
+    			if (first % 2 == 0) {
+    	    		summation = summation + first;
+    	    		first = first + 2;
+    	    		}
+    			
+    		}
+    	}
+
+    	return summation;
     }
     
     /**
@@ -32,8 +54,23 @@ public class S55 {
      * @return factorial of input value, or zero
      */
     public static long factorial(int value) {
-        // TODO
-        return 0;
+    	long fact = 1;
+    	if (value == 0) {
+    		fact = 1;
+    	}
+    	
+    	if (value < 0) {
+    		fact = 0;
+    	}
+    	
+    	else { 
+    		while (value > 0) {
+        		fact = value*fact;
+        		value = value - 1;
+        		}
+    	}
+    	return fact;
+    	
     }
     
     /**
@@ -43,8 +80,42 @@ public class S55 {
      * @return the Fibonacci number of value, or zero
      */
     public static long fibonacci(int value) {
-        // TODO
-        return 0;
+    	long coniglietti = 1;
+    	if (value < 0) {
+    		coniglietti = -1;
+    	}
+    	
+    	else {
+    		long[] conigliettiArray = new long[value + 1];
+    	
+//    	if (value < 0) {
+//    		coniglietti = -1;
+//    	}
+    	
+    	if (value == 0) {
+    		conigliettiArray[0] = 0;
+    		coniglietti = 0;
+    	}
+    	
+    	if (value == 1) {
+    		conigliettiArray[0] = 0;
+    		conigliettiArray[1] = 1;
+    		coniglietti = 1;
+    	}
+    	
+    	if (value > 1) {
+    		conigliettiArray[0] = 0;
+    		conigliettiArray[1] = 1;
+    		
+    		for (int i = 2; i < conigliettiArray.length ; i++) {
+    		conigliettiArray[i] = conigliettiArray[i-1] + conigliettiArray[i-2];
+    		}
+    		coniglietti = conigliettiArray[value];
+    	}
+    }
+    	
+    	return coniglietti;
+    	
     }
     
     /**

@@ -80,9 +80,32 @@ class S55Test {
 
     @Test
     void fibonacci() {
-        fail("Not yet implemented");
+        long actual = S55.fibonacci(8);
+        
+        assertThat(actual, is(21L)); //si mette L perchè è un long
+    }
+    
+    @Test
+    void fibonacciNeg() {
+        long actual = S55.fibonacci(-2);
+        
+        assertThat(actual, is(-1L)); //si mette L perchè è un long
     }
 
+    @Test
+    void fibonacciZero() {
+        long actual = S55.fibonacci(0);
+        
+        assertThat(actual, is(0L)); //si mette L perchè è un long
+    }
+    
+    @Test
+    void fibonacciOne() {
+        long actual = S55.fibonacci(1);
+        
+        assertThat(actual, is(1L)); //si mette L perchè è un long
+    }
+    
     @Test
     void multiplicationTable() {
         fail("Not yet implemented");
