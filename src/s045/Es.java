@@ -8,12 +8,13 @@ public class Es {
         exercise("Bob");
         exercise("ciAo");
         
-        Es es = new Es(); //per creare l'oggetto Es
+        // Es es = new Es(); //per creare l'oggetto Es
 
-        System.out.println("My toUpper(): " + es.toUpper("Bob")); //per essere pignolo bisogna scrivere Es.toUpper("Bob")
+        System.out.println("My toUpper(): " + toUpper("Bob")); //per essere pignolo bisogna scrivere Es.toUpper("Bob")
+    // se togliamo lo static allora dobbiamo scrivere System.out.println("My toUpper(): " + es.toUpper("Bob"));
     }
 
-    public String toUpper(String s) { //se tolgo 'static' è diventato di istanza
+    public static String toUpper(String s) { //se tolgo 'static' è diventato di istanza
         StringBuilder sb = new StringBuilder(s.length()); //facciamo così per non creare altre stringhe e quindi non allochiamo spazio per nulla
 
         for (int i = 0; i < s.length(); i++) {
