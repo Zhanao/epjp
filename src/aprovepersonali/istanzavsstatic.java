@@ -1,4 +1,4 @@
-package aaa;
+package aprovepersonali;
 
 public class istanzavsstatic {
 	// scivo main, e schiaccio ctrl+space
@@ -18,7 +18,7 @@ public class istanzavsstatic {
 	}
 	
 	public /* static */ int f() {
-		return 11;
+		return 12;
 	}
 
 }
