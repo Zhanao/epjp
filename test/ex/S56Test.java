@@ -16,7 +16,7 @@ class S56Test {
 
     @Test
     void isPalindromePlain() {
-        boolean actual = S56.isPalindrome("abba");
+        boolean actual = S56.isPalindrome("abcba");
 
         assertThat(actual, is(true));
     }
