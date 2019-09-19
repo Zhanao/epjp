@@ -90,9 +90,9 @@ public class S55 {
     	}
     	
     	for (int i=1;i<value;i++) {
-    		fib=a+b;
-    		a=b;
-    		b=fib;
+    		fib=a+b; //1 - 2 - 3 - 5
+    		a=b; //1 - 1 - 2 - 3
+    		b=fib; //1 - 2 - 3 - 5
     	}
         return fib;
     }

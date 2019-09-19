@@ -116,7 +116,7 @@ public class S56 {
      * @return the largest value
      */
     public static int max(int[] data) {
-    	int m=0;
+    	int m= Integer.MIN_VALUE; // perche l'utente puo' inserire valori negativi
     	for(int i=0 ; i < data.length ;i++) {
     		m=Math.max(m,data[i]);
     	}		

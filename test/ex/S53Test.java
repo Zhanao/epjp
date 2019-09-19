@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-class S53Test {
+class S53Test { // da notare che non c è il main, perché è nascosto in JUnit
 
     @Test
     void speedPlain() {

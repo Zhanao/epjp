@@ -9,9 +9,10 @@ class S56Test {
 
     @Test
     void reverseStringPlain() {
-        String actual = S56.reverse("abc");
+        String actual = S56.reverse("abcd");
 
-        assertThat(actual, is("cba"));
+        assertThat(actual, is("d"
+        		+ "cba"));
     }
 
     @Test
