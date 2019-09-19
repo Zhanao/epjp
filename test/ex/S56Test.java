@@ -27,11 +27,32 @@ class S56Test {
 
         assertThat(actual, is(false));
     }
+    
+    @Test
+    void isPalindromePlainRadar() {
+        boolean actual = S56.isPalindrome("radar");
+
+        assertThat(actual, is(true));
+    }
+    
+    @Test
+    void isPalindromePlainRador() {
+        boolean actual = S56.isPalindrome("rador");
+
+        assertThat(actual, is(false));
+    }
 
 
     @Test
     void removeVowelsPlain() {
         String actual = S56.removeVowels("example");
+
+        assertThat(actual, is("xmpl"));
+    }
+    
+    @Test
+    void removeVowelsPlainNoCrack() {
+        String actual = S56.removeVowels2("example");
 
         assertThat(actual, is("xmpl"));
     }
@@ -41,6 +62,20 @@ class S56Test {
         int actual = S56.bin2dec("1001");
 
         assertThat(actual, is(9));
+    }
+    
+    @Test
+    void bin2decNeg() {
+        int actual = S56.bin2decDebunk("-1001");
+
+        assertThat(actual, is(-9));
+    }
+    
+    @Test
+    void bin2decWord() {
+        int actual = S56.bin2decWord("18e7");
+
+        assertThat(actual, is(-1));
     }
 
     @Test

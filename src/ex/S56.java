@@ -37,13 +37,19 @@ public class S56 {
        	return true;
     }
     
-    public static boolean isPalindrome(String s) {
+    public static boolean isPalindrome(String s) {	
     	int j = 0;
-    	while (s.charAt(j) != s.charAt(s.length() - j - 1)) {
+    	while (s.charAt(j) == s.charAt(s.length() - j - 1) && j < s.length() - 1) {
     		j++;
+    		continue;
+    	}
+    	j = j + 1;
+    	if (j == s.length()) {
+    		return true; 
+    	}
+    	else {
     		return false;
     	}
-       	return true;
     }
 
     /**
@@ -66,7 +72,7 @@ public class S56 {
         }
         
         for (int i = 0; i < s.length(); i++) {
-        	if (arrayString[i] != "e") {
+        	if (s.charAt(i) != 'e' && s.charAt(i) != 'a' && s.charAt(i) != 'i' && s.charAt(i) != 'o' && s.charAt(i) != 'u' && s.charAt(i) != 'y') {
         		result = result.concat(arrayString[i]);
         	}
         	else continue;
@@ -82,8 +88,78 @@ public class S56 {
      * @return the converted integer
      */
     public static int bin2dec(String s) {
-        // TODO
-        return 0;
+    	int result = 0;
+    	int[] numArrayDec = new int[s.length()];
+    	
+    	for (int i = 0; i < s.length(); i++) {
+    		if (s.charAt(i) == '0') { numArrayDec[i] = 0; }
+    		if (s.charAt(i) == '1') { numArrayDec[i] = 1; }
+    	}
+
+    	for (int i = 0; i < s.length(); i++) {
+    		result = result + ((int) Math.pow(2, i)) * numArrayDec[i];
+    	}
+
+        return result;
+    }
+    
+    public static int bin2decWord(String s) {
+    	int result = 0;
+    	
+    	for (int j = 0; j < s.length(); j++) {
+    	
+    		if (s.charAt(j) != '0' && s.charAt(j) != '1') {
+    			result = -1;
+    		}
+    	
+    		else {
+    			int[] numArrayDec = new int[s.length()];
+    	
+    		for (int i = 0; i < s.length(); i++) {
+    			if (s.charAt(i) == '0') { numArrayDec[i] = 0; }
+    			if (s.charAt(i) == '1') { numArrayDec[i] = 1; }
+    		}
+
+    		for (int i = 0; i < s.length(); i++) {
+    			result = result + ((int) Math.pow(2, i)) * numArrayDec[i];
+    		}
+    		}
+    	}
+
+        return result;
+    }
+    
+    public static int bin2decDebunk(String s) {
+    	int result = 0;
+    	if (s.charAt(0) == '-') { 
+    		s = s.substring(1);
+    		int[] numArrayDec = new int[s.length()];
+        	
+        	for (int i = 0; i < s.length(); i++) {
+        		if (s.charAt(i) == '0') { numArrayDec[i] = 0; }
+        		if (s.charAt(i) == '1') { numArrayDec[i] = 1; }
+        	}
+
+        	for (int i = 0; i < s.length(); i++) {
+        		result = result + ((int) Math.pow(2, i)) * numArrayDec[i];
+        	}
+        	result = - result;
+    	}
+    	
+    	else {
+    		int[] numArrayDec = new int[s.length()];
+        	
+        	for (int i = 0; i < s.length(); i++) {
+        		if (s.charAt(i) == '0') { numArrayDec[i] = 0; }
+        		if (s.charAt(i) == '1') { numArrayDec[i] = 1; }
+        	}
+
+        	for (int i = 0; i < s.length(); i++) {
+        		result = result + ((int) Math.pow(2, i)) * numArrayDec[i];
+        	}
+    	}
+
+        return result;
     }
 
     /**
