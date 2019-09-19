@@ -81,6 +81,7 @@ public class S56 {
         return result;
     }
 
+
     /**
      * Convert from binary to decimal
      * 
@@ -97,11 +98,23 @@ public class S56 {
     	}
 
     	for (int i = 0; i < s.length(); i++) {
-    		result = result + ((int) Math.pow(2, i)) * numArrayDec[i];
+    		result = result + ((int) Math.pow(2, s.length() - i -1)) * numArrayDec[i];
     	}
 
         return result;
     }
+    
+    public static int bin2decSecondVersion(String s) {
+    	int result = 0;	
+    	for (int i = 0; i < s.length(); i++) {
+    		if (s.charAt(i) == '1') { 
+        		result += ((int) Math.pow(2, s.length() - i -1)); 
+        		}
+    	}
+
+        return result;
+    }
+    
     
     public static int bin2decWord(String s) {
     	int result = 0;
@@ -121,7 +134,7 @@ public class S56 {
     		}
 
     		for (int i = 0; i < s.length(); i++) {
-    			result = result + ((int) Math.pow(2, i)) * numArrayDec[i];
+    			result = result + ((int) Math.pow(2, s.length() - i -1)) * numArrayDec[i];
     		}
     		}
     	}
@@ -141,7 +154,7 @@ public class S56 {
         	}
 
         	for (int i = 0; i < s.length(); i++) {
-        		result = result + ((int) Math.pow(2, i)) * numArrayDec[i];
+        		result = result + ((int) Math.pow(2, s.length() - i -1)) * numArrayDec[i];
         	}
         	result = - result;
     	}
@@ -155,7 +168,7 @@ public class S56 {
         	}
 
         	for (int i = 0; i < s.length(); i++) {
-        		result = result + ((int) Math.pow(2, i)) * numArrayDec[i];
+        		result = result + ((int) Math.pow(2, s.length() - i -1)) * numArrayDec[i];
         	}
     	}
 

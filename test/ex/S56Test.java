@@ -59,9 +59,16 @@ class S56Test {
 
     @Test
     void bin2decPlain() {
-        int actual = S56.bin2dec("1001");
+        int actual = S56.bin2dec("1011");
 
-        assertThat(actual, is(9));
+        assertThat(actual, is(11));
+    }
+    
+    @Test
+    void bin2decSVPlain() {
+        int actual = S56.bin2decSecondVersion("1011");
+
+        assertThat(actual, is(11));
     }
     
     @Test
