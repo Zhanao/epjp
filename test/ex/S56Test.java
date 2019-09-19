@@ -20,6 +20,14 @@ class S56Test {
 
         assertThat(actual, is(true));
     }
+    
+    @Test
+    void isPalindromePlain2() {
+        boolean actual = S56.isPalindrome("acda");
+
+        assertThat(actual, is(false));
+    }
+
 
     @Test
     void removeVowelsPlain() {
@@ -45,6 +53,24 @@ class S56Test {
             assertThat(actual[i], is(original[original.length - i - 1]));
         }
     }
+    
+    @Test
+    void reverseIntArray() {
+        int[] original = new int[] {5, 13, 18, 42};
+        int[] actual = S56.reverse(original);
+
+        assertThat(actual[0], is(42));  
+    }
+    
+    @Test
+    void reverseIntArrayFor() {
+        int[] original = new int[] {5, 13, 18, 42};
+        int[] actual = S56.reverse(original);
+
+        for (int i = 0; i < original.length; i++) {
+        assertThat(actual[i], is(original[original.length -i -1]));
+        }
+    }
 
     @Test
     void averagePlain() {
@@ -58,6 +84,13 @@ class S56Test {
         int actual = S56.max(new int[] {2, 3, 1});
 
         assertThat(actual, is(3));
+    }
+    
+    @Test
+    void maxNeg() {
+        int actual = S56.max(new int[] {2, -3, 1});
+
+        assertThat(actual, is(2));
     }
 
 }
