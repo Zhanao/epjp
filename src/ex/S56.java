@@ -8,8 +8,11 @@ public class S56 {
      * @return the input reversed
      */
     public static String reverse(String s) {
-        // TODO
-        return "";
+       StringBuilder rev= new StringBuilder(s.length());
+       for (int i = 0 ; i< s.length(); i++) {
+    	   rev.insert(rev.length()-i, s.charAt(i));
+       }
+        return rev.toString();
     }
 
     /**
@@ -19,8 +22,15 @@ public class S56 {
      * @return true if the parameter is a palindrome
      */
     public static boolean isPalindrome(String s) {
-        // TODO
-        return false;
+    	boolean test = true;
+    	for(int j = 0; j < s.length()/2+1; j++) {
+        	if(s.charAt(j)!=s.charAt(s.length()-1-j)) {
+        	
+        		test= false;
+        		break;
+        	}
+        }
+       return test; 
     }
 
     /**
@@ -30,8 +40,25 @@ public class S56 {
      * @return a string, same of input but without vowels
      */
     public static String removeVowels(String s) {
-        // TODO
-        return "";
+    	StringBuilder copy = new StringBuilder();
+    	for(int i=0;i<s.length() ;i++) {
+    		if (s.charAt(i)=='a'||
+    			s.charAt(i)=='e'||
+    			s.charAt(i)=='i'||
+    			s.charAt(i)=='o'||
+    			s.charAt(i)=='u'||
+    			s.charAt(i)=='A'||
+    			s.charAt(i)=='E'||
+    			s.charAt(i)=='I'||
+    			s.charAt(i)=='O'||
+    			s.charAt(i)=='U'){
+    				continue;	
+    			}else {
+
+    			copy.append(s.charAt(i));	
+    			}
+    	}
+        return copy.toString();
     }
 
     /**
@@ -41,8 +68,14 @@ public class S56 {
      * @return the converted integer
      */
     public static int bin2dec(String s) {
-        // TODO
-        return 0;
+    	int dec=0;
+    	for(int i=0;i<s.length();i++) {
+    		if (s.charAt(s.length()-i-1) == '1') {
+    			dec=(int)(dec+ Math.pow(2, i));
+    		}
+    	}
+    		
+        return dec;
     }
 
     /**
@@ -52,10 +85,10 @@ public class S56 {
      * @return a new array holding the same elements of input, in reversed order
      */
     public static int[] reverse(int[] data) {
-        int[] result = new int[0];
-
-        // TODO
-
+        int[] result = new int[data.length];
+        for (int i=0; i<data.length;i++) {
+        result[data.length-1-i]=data[i] ;	
+        }
         return result;
     }
 
@@ -66,8 +99,14 @@ public class S56 {
      * @return the average
      */
     public static double average(int[] data) {
-        // TODO
-        return 0;
+       double sum=0;
+    	
+    	for(int i=0; i<data.length;i++) {
+    	   sum=sum+data[i];
+       }
+    	double media = sum/data.length;
+    	
+        return media;
     }
     
     /**
@@ -77,7 +116,10 @@ public class S56 {
      * @return the largest value
      */
     public static int max(int[] data) {
-        // TODO
-        return 0;
+    	int m=0;
+    	for(int i=0 ; i < data.length ;i++) {
+    		m=Math.max(m,data[i]);
+    	}		
+        return m;
     }
 }
