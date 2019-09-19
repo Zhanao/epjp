@@ -44,6 +44,14 @@ class S55Test {
     }
 
     @Test
+    void evenSumPositiveLonger() {
+        long actual = S55.evenSum(1, 8);
+
+        assertThat(actual, is(20L));
+    }
+
+    
+    @Test
     void evenSumNegPos() {
         long actual = S55.evenSum(-3, 3);
 
@@ -91,6 +99,20 @@ class S55Test {
         
         assertThat(actual, is(-1L)); //si mette L perchè è un long
     }
+    
+    @Test
+    void fibonacciOver() {
+        long actual = S55.fibonacci(200);
+        
+        assertThat(actual, is(-1L)); //si mette L perchè è un long
+    }
+    
+    @Test
+    void fibonacciLimit() {
+        long actual = S55.fibonacci(50);
+        
+        assertThat(actual, is(12586269025L)); //si mette L perchè è un long
+    }
 
     @Test
     void fibonacciZero() {
@@ -109,23 +131,18 @@ class S55Test {
     @Test
     void multiplicationTable() {
     	int[][] actual = S55.multiplicationTable(3);
-
-    	assertThat(actual[0][0], is(1));
-    	assertThat(actual[0][1], is(2));
-    	assertThat(actual[0][2], is(3));
-    	assertThat(actual[1][0], is(2));
-    	assertThat(actual[1][1], is(4));
-    	assertThat(actual[1][2], is(6));
-    	assertThat(actual[2][0], is(3));
-    	assertThat(actual[2][1], is(6));
-    	assertThat(actual[2][2], is(9));
+    	
+    	for (int i = 0; i < 3; i++) {
+        	for (int j = 0; j < 3; j++) {
+    	assertThat(actual[i][j], is((i + 1) * (j + 1)));
+        	}
+    	}
     }
     
     @Test
     void multiplicationTableNeg() {
     	int actual = S55.multiplicationTable(-1)[0][0];
 
-    	
     	assertThat(actual, is(-1));
 
     }
@@ -134,7 +151,6 @@ class S55Test {
     void multiplicationTableZero() {
     	int actual = S55.multiplicationTable(0)[0][0];
 
-    	
     	assertThat(actual, is(0));
 
     }
@@ -142,7 +158,6 @@ class S55Test {
     @Test
     void multiplicationTableOver() {
     	int actual = S55.multiplicationTable(200)[0][0];
-
     	
     	assertThat(actual, is(-1));
 

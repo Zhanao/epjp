@@ -83,38 +83,36 @@ public class S55 {
 		if (value < 0) {
 			coniglietti = -1;
 		}
+		else { if (value > 50) {
+			coniglietti = -1;
+		}
+		
+			else {
+				long[] conigliettiArray = new long[value + 1];
 
-		else {
-			long[] conigliettiArray = new long[value + 1];
-
-//    	if (value < 0) {
-//    		coniglietti = -1;
-//    	}
-
-			if (value == 0) {
-				conigliettiArray[0] = 0;
-				coniglietti = 0;
-			}
-
-			if (value == 1) {
-				conigliettiArray[0] = 0;
-				conigliettiArray[1] = 1;
-				coniglietti = 1;
-			}
-
-			if (value > 1) {
-				conigliettiArray[0] = 0;
-				conigliettiArray[1] = 1;
-
-				for (int i = 2; i < conigliettiArray.length; i++) {
-					conigliettiArray[i] = conigliettiArray[i - 1] + conigliettiArray[i - 2];
+				if (value == 0) {
+					conigliettiArray[0] = 0;
+					coniglietti = 0;
 				}
-				coniglietti = conigliettiArray[value];
+
+				if (value == 1) {
+					conigliettiArray[0] = 0;
+					conigliettiArray[1] = 1;
+					coniglietti = 1;
+				}
+
+				if (value > 1) {
+					conigliettiArray[0] = 0;
+					conigliettiArray[1] = 1;
+
+					for (int i = 2; i < conigliettiArray.length; i++) {
+						conigliettiArray[i] = conigliettiArray[i - 1] + conigliettiArray[i - 2];
+					}
+					coniglietti = conigliettiArray[value];
+				}
 			}
 		}
-
 		return coniglietti;
-
 	}
 
 	/**
