@@ -108,6 +108,46 @@ class S55Test {
     
     @Test
     void multiplicationTable() {
-        fail("Not yet implemented");
+    	int[][] actual = S55.multiplicationTable(3);
+
+    	assertThat(actual[0][0], is(1));
+    	assertThat(actual[0][1], is(2));
+    	assertThat(actual[0][2], is(3));
+    	assertThat(actual[1][0], is(2));
+    	assertThat(actual[1][1], is(4));
+    	assertThat(actual[1][2], is(6));
+    	assertThat(actual[2][0], is(3));
+    	assertThat(actual[2][1], is(6));
+    	assertThat(actual[2][2], is(9));
     }
+    
+    @Test
+    void multiplicationTableNeg() {
+    	int actual = S55.multiplicationTable(-1)[0][0];
+
+    	
+    	assertThat(actual, is(-1));
+
+    }
+    
+    @Test
+    void multiplicationTableZero() {
+    	int actual = S55.multiplicationTable(0)[0][0];
+
+    	
+    	assertThat(actual, is(0));
+
+    }
+    
+    @Test
+    void multiplicationTableOver() {
+    	int actual = S55.multiplicationTable(200)[0][0];
+
+    	
+    	assertThat(actual, is(-1));
+
+    }
+
 }
+
+
