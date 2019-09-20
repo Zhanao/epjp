@@ -120,6 +120,13 @@ class S56Test {
 
         assertThat(actual, is(2.0));
     }
+    
+    @Test
+    void averageBilion() {
+        double actual = S56.average(new int[] {1000000, 1000000, 1000000, 1000000});
+
+        assertThat(actual, is(1000000.0));
+    }
 
     @Test
     void maxPlain() {

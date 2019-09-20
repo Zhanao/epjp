@@ -198,11 +198,11 @@ public class S56 {
      * @return the average
      */
     public static double average(int[] data) {
-        int summation = 0;
+        long summation = 0;
         for (int i = 0; i < data.length; i++) {
         	summation = summation + data[i];
         }
-        int average = summation/data.length;
+        long average = summation/data.length;
         return average;
     }
     
