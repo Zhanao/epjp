@@ -88,8 +88,8 @@ class S55Test {
     void multiplicationTable() {
         int [][] test= S55.multiplicationTable(5);
         
-        int row=test.length;
-        int columns=test[0].length;
+        int row=test.length; // quanto è alto
+        int columns=test[0].length; // quanto è largo
         assertThat(row,is(5));
         assertThat(columns,is(5));
         assertThat(test[1][2],is(6));
