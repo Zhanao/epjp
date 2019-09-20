@@ -4,7 +4,7 @@ public class Aaa { //seconda cosa si crea la classe
 	public static void main(String[] args) { //il main serve per far vivere la classe autonomamente
 		
 
-	System.out.println("");
+	System.out.println("Impuro");
 	
 	Aaa.f();
 	}
