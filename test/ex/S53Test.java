@@ -73,9 +73,16 @@ class S53Test {
     
     @Test
     void digitSumOver() {
-        int actual = S53.digitSum(-1238);
+        int actual = S53.digitSum(-8123);
 
         assertThat(actual, is(-1));
+    }
+    
+    @Test
+    void digitSumBig() {
+        int actual = S53.digitSumOptimized(-1238);
+
+        assertThat(actual, is(14));
     }
     
 //    @Test

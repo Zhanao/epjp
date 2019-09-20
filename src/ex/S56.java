@@ -185,7 +185,7 @@ public class S56 {
     public static int[] reverse(int[] data) {
         int[] result = new int[data.length];
         for (int i = 0; i < data.length; i++) {
-        	result[i] = data[data.length - i -1];
+        	result[i] = data[data.length - i - 1];
         }
 
         return result;

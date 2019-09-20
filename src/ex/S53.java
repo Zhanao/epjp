@@ -55,7 +55,7 @@ public class S53 {
      */
     public static int digitSum(int value) {
     	value = Math.abs(value);
-    	int digitsummation = 0;
+    	int digitsummation = 0;    	
     	
     	if (value > 999) {
     		digitsummation =-1;
@@ -85,5 +85,18 @@ public class S53 {
 //    	}
 //    	return digitsummation;
 //    }
+ 
+    public static int digitSumOptimized(int value) {
+    	value = Math.abs(value);
+    	int digitsummation = 0;
+    	
+    	while (value != 0) {
+    		int last = value % 10;
+    		digitsummation += last;
+    		value = (value - last)/10;
+    	}
+    	
+    	return digitsummation;
+    }
     
 }
