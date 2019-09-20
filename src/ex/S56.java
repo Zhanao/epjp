@@ -66,10 +66,11 @@ public class S56 {
     
     public static String removeVowels2(String s) {
     	String result = "";
-        String[] arrayString = new String[s.length()];
-        for (int i = 0; i < s.length(); i++) {
-        	arrayString[i] = s.substring(i, i+1);
-        }
+//        String[] arrayString = new String[s.length()];
+//        for (int i = 0; i < s.length(); i++) {
+//        	arrayString[i] = s.substring(i, i+1);
+//        }
+    	String[] arrayString = s.split("");
         
         for (int i = 0; i < s.length(); i++) {
         	if (s.charAt(i) != 'e' && s.charAt(i) != 'a' && s.charAt(i) != 'i' && s.charAt(i) != 'o' && s.charAt(i) != 'u' && s.charAt(i) != 'y') {
