@@ -141,5 +141,47 @@ class S56Test {
 
         assertThat(actual, is(2));
     }
+    
+    @Test
+    void parseIntWord() {
+        int actual = S56.parseInt("8099");
+
+        assertThat(actual, is(8099));
+    }
+    
+    @Test
+    void parseIntWordNeg() {
+        int actual = S56.parseInt("-8099");
+
+        assertThat(actual, is(-8099));
+    }
+    
+    @Test
+    void parseIntWordLetters() {
+        int actual = S56.parseInt("-8099e");
+
+        assertThat(actual, is(0));
+    }
+    
+    @Test
+    void parseIntOptWord() {
+        int actual = S56.parseIntOpt("8099");
+
+        assertThat(actual, is(8099));
+    }
+    
+    @Test
+    void parseIntWordOptNeg() {
+        int actual = S56.parseIntOpt("-8099");
+
+        assertThat(actual, is(-8099));
+    }
+    
+    @Test
+    void parseIntWordOptLetters() {
+        int actual = S56.parseIntOpt("-8099e");
+
+        assertThat(actual, is(0));
+    }
 
 }

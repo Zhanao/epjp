@@ -219,4 +219,62 @@ public class S56 {
         }
         return max;
     }
+    
+    public static int parseInt(String s) {
+    	int result = 0;
+    	int appoggio = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+        	if ( s.charAt(i) >= '0' && s.charAt(i) <= '9' || s.charAt(i) == '-') {
+        		continue;
+        	}
+        	else {
+        		return result;
+        	}
+        }
+        
+        if (s.charAt(0) == '-') {
+        	s = s.substring(1);
+        	appoggio = 1;
+        }
+        
+        for (int i = 0; i < s.length(); i++) {
+        	if (s.charAt(i) == '9') { result += 9*Math.pow(10, s.length() - i -1); }
+        	if (s.charAt(i) == '8') { result += 8*Math.pow(10, s.length() - i -1); }
+        	if (s.charAt(i) == '7') { result += 7*Math.pow(10, s.length() - i -1); }
+        	if (s.charAt(i) == '6') { result += 6*Math.pow(10, s.length() - i -1); }
+        	if (s.charAt(i) == '5') { result += 5*Math.pow(10, s.length() - i -1); }
+        	if (s.charAt(i) == '4') { result += 4*Math.pow(10, s.length() - i -1); }
+        	if (s.charAt(i) == '3') { result += 3*Math.pow(10, s.length() - i -1); }
+        	if (s.charAt(i) == '2') { result += 2*Math.pow(10, s.length() - i -1); }
+        	if (s.charAt(i) == '1') { result += 1*Math.pow(10, s.length() - i -1); }
+        	else { continue; }
+        }
+        
+        if (appoggio == 1) {
+        	result = - result;
+        }
+                
+        return result;
+    }
+    
+    public static int parseIntOpt(String s) {
+    	int result = 0;
+
+        for (int i = s.length() - 1; i >= 0; i--) {
+        	if (s.charAt(i) == '9') { result += 9*Math.pow(10, i); }
+        	if (s.charAt(i) == '8') { result += 8*Math.pow(10, i); }
+        	if (s.charAt(i) == '7') { result += 7*Math.pow(10, i); }
+        	if (s.charAt(i) == '6') { result += 6*Math.pow(10, i); }
+        	if (s.charAt(i) == '5') { result += 5*Math.pow(10, i); }
+        	if (s.charAt(i) == '4') { result += 4*Math.pow(10, i); }
+        	if (s.charAt(i) == '3') { result += 3*Math.pow(10, i); }
+        	if (s.charAt(i) == '2') { result += 2*Math.pow(10, i); }
+        	if (s.charAt(i) == '1') { result += 1*Math.pow(10, i); }
+        	if (s.charAt(i) == '-') { result *= -1; }
+         	else { continue; }
+        }
+                
+        return result;
+    }
 }
