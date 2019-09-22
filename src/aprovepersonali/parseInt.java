@@ -1,50 +1,56 @@
 package aprovepersonali;
 
+import java.util.Arrays;
+
 public class parseInt {
 	public static void main(String[] args) {
-		String s = "1234";
-		parseInt p= new parseInt();
-		System.out.println(p.parseInto(s));
+		String s = "1554327777";
+		parseInt p = new parseInt();
+		System.out.println("valore numerico da analizzare: "+ p.parseInto(s));
+		System.out.println(p.ripeNum(s));
 	}
-	 int parseInto(String s) {
-		double sum=0;
-		char c='a';
-		double n=0;
-		for (int i=0; i<s.length();i++) {
-			c=s.charAt(s.length()-1-i);
-			if(c=='-') {
-				return (int)-sum;
-				
+
+	int parseInto(String s) {
+		double sum = 0;
+		char c = 'a';
+		double n = 0;
+		for (int i = 0; i < s.length(); i++) {
+			c = s.charAt(s.length() - 1 - i);
+			if (c == '-') {
+				return (int) -sum;
+
 			}
-			if(c>='0' && c<='9') {
-				n = (c-'0')*Math.pow(10, i);
-				sum=sum+n;
-			}else {
+			if (c >= '0' && c <= '9') {
+				n = (c - '0') * Math.pow(10, i);
+				sum = sum + n;
+			} else {
 				return 0;
 			}
-			
+
 		}
-		return (int)sum;
+		return (int) sum;
 	}
-	 
-	 String ripNum(String s) {
-		 int c=0;
-		 int [][] contatore;
-		 StringBuilder temp = new StringBuilder();
-		 for (int i = 0; i < s.length(); i++) {
-			 for (int j = i; j<s.length();j++) {
-				 if(s.charAt(i)==s.charAt(j)){
-				contatore[1][c]=;
-						contatore[2][c]=;
-				 }
-			 }
-			 
-		 }
-		 
-		 
-		 return "Il numero riptuto piu' volte e'"+""+"per"+""+"volte";
-		 
-		 
-	 }
+// data una stringa permette di inividuare il carattere piu ripetuto.
+	String ripeNum(String s) {
+		char[] c = s.toCharArray();
+		Arrays.sort(c);
+		int count = 1;
+		int max = 0;
+		char cmax = s.charAt(0);
+		for (int i = 1; i < c.length; i++) {
+			if (c[i] == c[i - 1]) {
+				count++;
+				if (count > max) {
+					max = count;
+					cmax = c[i];
+				}
+			} else {
+				count = 1;
+			}
+
+		}
+		return "il numero piu' ripetuto e' il " + cmax + " che compare " + max + " volte.";
+
+	}
 
 }

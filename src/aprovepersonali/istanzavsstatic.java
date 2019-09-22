@@ -5,6 +5,7 @@ public class istanzavsstatic {
 	public static void main(String[] args) {
 		System.out.print("ciao");
 		istanzavsstatic test = new istanzavsstatic();
+		
 
 		System.out.println(test.f()); // scrivere " sysout " e schiacciare ctrl+space
 
@@ -12,7 +13,13 @@ public class istanzavsstatic {
 		// oggetto per farlo funzionare
 		// oppure in alternativa rendo f() static: public static int (); e per chiamarlo
 		// basta scrivere A.f():
-
+		int i=7;
+		Integer j=8;
+		if (j == i) {
+			System.out.println(true);
+		}else {
+			System.out.println(false);
+		}
 //System.out.println( A.f());
 
 	}
