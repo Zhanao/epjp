@@ -8,7 +8,6 @@ public class Main {
         veicoli[1] = new Moto();
         veicoli[2] = new Bus();
         
-
         for(Veicolo veicolo: veicoli) {
             System.out.println(veicolo.sterza(10));
         }
