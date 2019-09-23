@@ -1,4 +1,4 @@
-package s066a;
+/*package s066a;
 
 import s066a.climatizzabile;
 import s066a.Bus;
@@ -12,6 +12,10 @@ public class Main {
 		veicoli[2]= new Moto();
 		
 		for(Veicolo v:veicoli) {
+			if ( v instanceof Moto) {
+				Moto bike=(Moto)v;
+				bike.sterza(d, 20)
+			}
 			System.out.println(v.sterza('s'));
 		}
 		
@@ -27,10 +31,18 @@ public class Main {
         
 
         for(climatizzabile v: climatizzati) {
+        	if(v instanceof Auto) {
+        		System.out.println("Questa è una macchina ");
+        		Auto A=(Auto) v;
+        		A.Sterza('d');
+        		
+        		
+        	}
             System.out.println(v.changeTemp(25));
         }
+        
         
 
     }
 
-}
+}*/

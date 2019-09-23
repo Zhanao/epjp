@@ -1,7 +1,13 @@
 package s066a;
 
 public class Veicolo {
-	String sterza(char c) {
+	private char c;
+	
+	public Veicolo (char c) {
+		this.c = c;
+	}
+
+String sterza(char c) {
 		
 		
 		if (c=='s') {
