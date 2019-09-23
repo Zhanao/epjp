@@ -12,9 +12,9 @@ public class Main {
         }
         
         BarkAndWag baw = new Dog();
-        System.out.println(baw.tailWaggingSpeed());
+        System.out.println(baw.tailWaggingSpeed()); // dato che chiamo un metodo di barkandwag posso definire un oggetto di tipo BarkAndWag
 
         Dog dog = new Dog();
-        System.out.println(dog.bark(3));
+        System.out.println(dog.bark(3)); // è il metodo bark(int) non entra con BarkAndWag quindi per forza devo creare un oggetto Dog.
     }
 }

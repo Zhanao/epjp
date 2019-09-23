@@ -6,7 +6,7 @@ public class Dog implements BarkAndWag {
         return "woof!";
     }
 
-    public String bark(int count) {
+    public String bark(int count) { // questo metodo bark non é quello della riga sopra perche chiede in entrata un parametro.
         StringBuilder sb = new StringBuilder();
 
         for (int i = 0; i < count; i++) {
