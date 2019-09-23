@@ -5,7 +5,7 @@ public class Poodle extends Dog {
 	private int curlDensity;
 	
 	public Poodle() {
-		super();
+		super(); //costruttore di default della classe sopra
 		this.curlDensity = DEFAULT_DENSITY;
 	}
 
@@ -24,7 +24,7 @@ public class Poodle extends Dog {
 	
 	@Override
 	public String getName() {
-		return "Poodle " + super.getName();
+		return "Poodle " + super.getName(); //se mettiamo this.getName() si avrà un stack overflow
 	}
 	
 	@Override

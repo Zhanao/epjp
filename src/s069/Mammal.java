@@ -11,4 +11,8 @@ public abstract class Mammal {
     public String toString() {
         return "Mammal [gestation=" + gestation + "]";
     }
+    
+    class X extends Object {
+    	
+    }
 }
