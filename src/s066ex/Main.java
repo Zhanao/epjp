@@ -8,9 +8,32 @@ public class Main {
         vehicles[2] = new MotorBike();
         
         boolean rightDirection = true;
-        for(Vehicle vehicle : vehicles) {
-            vehicle.steer(rightDirection);
-            rightDirection = !rightDirection;
+        int angle = 50;
+//        for(Vehicle vehicle : vehicles) {
+//        	//(2) bike:call the specific method
+//            vehicle.steer(rightDirection);
+//            rightDirection = !rightDirection;
+//        }
+        
+//        for(Vehicle vehicle : vehicle) {
+//        	if (vehicle instanceof Motorbike) {
+//            MotorBike bike = (Motorbike)vehicle;
+//        	}
+//        	else {
+//        		vehicles[i].steer(rightDirection);        		
+//        	}
+//        	rightDirection = !rightDirection;
+//        }
+        
+        
+        for(int i = 0; i < 3; i++) {
+        	if (i == 2) {
+            MotorBike.steer(rightDirection, angle);
+        	}
+        	else {
+        		vehicles[i].steer(rightDirection);        		
+        	}
+        	rightDirection = !rightDirection;
         }
         
         Conditioning[] conditionings = new Conditioning[2];
@@ -21,6 +44,17 @@ public class Main {
         for(Conditioning conditioning : conditionings) {
             conditioning.setTemperature(temperature);
             temperature += 1;
+        }
+        
+        //(1) steer the car in conditionings
+        for(Conditioning conditioning : conditionings) {
+        if (conditioning instanceof Car) {
+        	System.out.println("This is a car ->");
+        	Car car = (Car)conditioning;
+        	car.steer(true);
+        } else {
+           	System.out.println("This is not a car.");
+        	}
         }
     }
 }
