@@ -1,6 +1,6 @@
 package s066exConEmp;
 
-public class Person2{
+public class Person2 {
 	private String name;
 	private String surname;
 
@@ -10,7 +10,8 @@ public class Person2{
         this.surname = surname;
     }
     
-    public String getCompleteName() {
+    @Override
+    public String toString() {
         return name + " , " + surname;
     }
 

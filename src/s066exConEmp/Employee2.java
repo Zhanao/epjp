@@ -12,7 +12,8 @@ public class Employee2 extends Person2 {
     	return salary;
     }
     
+    @Override
     public String toString( ) {
-    	return "Employee " + salary + ", toString()=" +super.getCompleteName();
+    	return "Employee " + salary + ", toString()=" + super.toString();
     }
 }

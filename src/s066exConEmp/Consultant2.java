@@ -12,8 +12,9 @@ public class Consultant2 extends Person2  {
     	return daily;
     }
     
+    @Override
     public String toString( ) {
-    	return "Consultant " + daily + ", toString()=" +super.getCompleteName();
+    	return "Consultant " + daily + ", toString()=" + super.toString();
     }
 
 }

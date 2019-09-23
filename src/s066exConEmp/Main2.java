@@ -25,7 +25,7 @@ public static void main(String[] args) {
     	if (person2 instanceof Employee2) {
         	System.out.println((Employee2)person2.getSalary());
     	} else {
-        	System.out.println(Consultant2)person2.getDaily());
+        	System.out.println((Consultant2)person2.getDaily());
     		}
     	}
 
