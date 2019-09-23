@@ -183,5 +183,12 @@ class S56Test {
 
         assertThat(actual, is(0));
     }
+    
+	@Test
+	void NumberFrequencyPlain() {
+		int actual = NumberFrequency.frequency(80982);
+		
+		assertThat(actual, is(8));
+	}
 
 }
