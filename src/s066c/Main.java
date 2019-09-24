@@ -37,8 +37,6 @@ public class Main {
 			}
 			}
 			
-			
-//			select[1] = pers[scan.nextInt()-1];
 		}
 
 		System.out.println("I due guerrieri selezionati sono:");
