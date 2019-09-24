@@ -18,16 +18,18 @@ public static void main(String[] args) {
 
     
     for (Person2 person2 : people) {
-        System.out.println(people);
+        System.out.println(person2);
     }
     
-    for(Person2 person2 : people) {
-    	if (person2 instanceof Employee2) {
-        	System.out.println((Employee2)person2.getSalary());
-    	} else {
-        	System.out.println((Consultant2)person2.getDaily());
-    		}
-    	}
+//    for(Person2 person2 : people) {
+//    	if (person2 instanceof Employee2) {
+//    		Employee2 c = (Employee2)person2;
+//        	System.out.println(c.getSalary());
+//    	} else {
+//    		Consultant2 e = (Consultant2)person2;
+//        	System.out.println(e.getDaily());
+//    		}
+//    	}
 
 	}
 }

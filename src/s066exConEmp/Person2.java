@@ -12,7 +12,7 @@ public class Person2 {
     
     @Override
     public String toString() {
-        return name + " , " + surname;
+        return name + ", " + surname;
     }
 
 }
