@@ -12,7 +12,7 @@ public class AsCollection {
         coll.addAll(aCollection());
         System.out.println(coll);
 
-        if (coll.contains(-2233)) {
+        if (coll.contains(-2233)) { //cointains prende un oggetto ma gli ho passato un int: boxing implicito da int a integer
             System.out.println("-2233 is there");
         }
 
@@ -39,7 +39,7 @@ public class AsCollection {
         Integer[] values = coll.toArray(new Integer[coll.size()]);
         System.out.println(Arrays.toString(values));
         
-        coll.retainAll(aCollection());
+        coll.retainAll(aCollection());//solo numeri in entrambe le collezioni
         System.out.println(coll);
         
         coll.clear();
@@ -53,7 +53,7 @@ public class AsCollection {
     }
 
     private static Collection<Integer> aCollection() {
-        return Arrays.asList(12, 18, -5, -2233);
+        return Arrays.asList(12, 18, -5, -2233); //pur avendo messo int mi diventano integer
     }
 
 }
