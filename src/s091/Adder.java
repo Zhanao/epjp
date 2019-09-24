@@ -7,7 +7,7 @@ public class Adder {
         System.out.println("Please, enter a few numbers");
         double result = 0;
 
-        // try-with-resources
+        // try-with-resources, mi auto chiude scan anche se c'è eccezione
         try (Scanner scanner = new Scanner(System.in)) {
             while (scanner.hasNext()) {
                 if (scanner.hasNextDouble()) {

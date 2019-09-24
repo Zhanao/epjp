@@ -7,7 +7,7 @@ import java.io.PrintWriter;
 
 public class WriteHello {
     public static void main(String[] args) {
-        File f = new File("/tmp/hello.txt");
+        File f = new File("/temp/hello.txt");
 
         try {
             PrintWriter pw = new PrintWriter(new FileWriter(f));

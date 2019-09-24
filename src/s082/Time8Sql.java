@@ -9,16 +9,16 @@ import java.time.LocalTime;
 
 public class Time8Sql {
     public static void main(String[] args) {
-        Date date = Date.valueOf(LocalDate.now());
-        System.out.println("Sql Date" + date);
+        Date date = Date.valueOf(LocalDate.now()); //questo non è un java util date ma sql date. Ho un date in formato sql salvato dentro a date
+        System.out.println("Sql Date " + date);
         System.out.println("Converted to LocalDate: " + date.toLocalDate());
         
         Time time = Time.valueOf(LocalTime.now());
-        System.out.println("Sql Time" + time);
+        System.out.println("Sql Time " + time);
         System.out.println("Converted to LocalTime: " + time.toLocalTime());
         
         Timestamp ts = Timestamp.valueOf(LocalDateTime.now());
-        System.out.println("Sql Timestamp" + ts);
+        System.out.println("Sql Timestamp " + ts);
         System.out.println("Converted to LocalDateTime: " + ts.toLocalDateTime());
         System.out.println("Converted to Instant: " + ts.toInstant());
     }
