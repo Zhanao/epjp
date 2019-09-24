@@ -11,16 +11,18 @@ public abstract class Character {
 		this.name = name;
 		this.clanName = clanName;
 		this.lifePoints = lifePoints;
-		//this.armorClass = armorClass;
 	}
 	
 	public int fight(int damage){
 		return damage;
 	}
 	
-	@Override
-	public String toString() {
-		return name + " " + clanName + " with " + lifePoints + " life points";
+	public int getLifePoints() {
+		return lifePoints;
+	}
+	
+	public String getFullName() {
+		return name + " " + clanName;
 	}
 
 }

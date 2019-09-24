@@ -1,13 +1,14 @@
 package mondoFantastico;
 
 public class Human extends Character {
+	private int bonus =  (int) (Math.round(Math.random()*3) + 1);
+	
 	public Human(String name, String clanName, int lifePoints) {
 		super(name, clanName, lifePoints);
 	}
 
-	@Override
 	public int fight(int damage) {
-		damage = (int) (Math.round(Math.random()*11) + 1); 
+		damage = damage + bonus; 
 		return damage;
 	}
 }
