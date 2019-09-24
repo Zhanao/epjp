@@ -35,5 +35,7 @@ public class TempFile {
         System.out.println("Last modified: " + f1.lastModified());
         System.out.println("Length: " + f1.length());
         System.out.println("List: " + Arrays.toString(dir.list()));
+        
+        System.out.println("Time elapsed in millisecond from jnuary 1st 1970: " + f1.lastModified());
     }
 }

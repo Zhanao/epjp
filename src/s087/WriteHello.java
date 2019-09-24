@@ -7,7 +7,7 @@ import java.io.PrintWriter;
 
 public class WriteHello {
     public static void main(String[] args) {
-        File f = new File("/tmp/hello.txt");
+        File f = new File("/tmp/hello.txt"); //se non si ha la cartella tmp bisogna crearla così può scrivere il file hello.txt(ma va?)
 
         try {
             PrintWriter pw = new PrintWriter(new FileWriter(f));
