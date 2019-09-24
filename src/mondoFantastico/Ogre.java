@@ -1,5 +1,5 @@
 package mondoFantastico;
 
-public class Personaggi {
+public class Ogre {
 
 }

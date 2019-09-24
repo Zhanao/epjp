@@ -8,7 +8,7 @@ public class Adder {
         double result = 0;
 
         // try-with-resources
-        try (Scanner scanner = new Scanner(System.in)) {
+        try (Scanner scanner = new Scanner(System.in)) { //in java 7 si è introdotto il try per terminare il programma
             while (scanner.hasNext()) {
                 if (scanner.hasNextDouble()) {
                     result += scanner.nextDouble();
