@@ -1,6 +1,5 @@
 package s066c;
 
-
 import java.util.Scanner;
 
 public class Main {
@@ -24,19 +23,23 @@ public class Main {
 		Personaggio[] select = new Personaggio[2];
 		System.out.println("Scegli i due combattenti da 1 a 4:");
 		try (Scanner scan = new Scanner(System.in)) {
-			int i=0;
-			
-			while(i<2) {
-				int s=scan.nextInt();
-			if (s>=1&&s<=4) {
+			int i = 0;
 
-				select[i] = pers[s-1];	
-				i++;
-			}else {
-			System.out.println("Ci spiace ma per adesso ci sono solo questi personaggi, scegli tra 1 e 4");	
+			while (i < 2) {
+				if (scan.hasNext() && scan.hasNextInt()) {
+					int s = scan.nextInt();
+					if (s >= 1 && s <= 4) {
+
+						select[i] = pers[s - 1];
+						i++;
+					} else {
+						System.out.println("Ci spiace ma per adesso ci sono solo questi personaggi, scegli tra 1 e 4");
+					}
+				} else {
+					System.out.println(scan.next() + " non è un intero compreso tra 1 e 4 " +"prego scegliere il combattente");
+				}
 			}
-			}
-			
+
 		}
 
 		System.out.println("I due guerrieri selezionati sono:");

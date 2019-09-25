@@ -8,9 +8,9 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class NumdaFile {
-	public static void main(String[] args) throws FileNotFoundException {
+	public static void main(String[] args) {
 
-		File f = new File("/Dev/eclipse/workspace/epjp/src/s091ex/numeri.txt");
+		File f = new File("/Dev/eclipse/workspace/epjp/src/s091ex/numerib.txt");
 
 		try {
 			if (f.exists() == false) {
@@ -48,6 +48,8 @@ public class NumdaFile {
 				}
 			}
 
+		} catch(FileNotFoundException e) {
+			System.out.println("file not found: " + e.getMessage());
 		}
 	}
 }
