@@ -28,7 +28,13 @@ public class Main {
 				System.out.println(o.getFullNameAndStats());
 			}
 		}
+		
+		int[] lFC = new int[5];
+		for (int i = 0; i < 5; i++) {
+			lFC[i] = characters[i].getLifePoints();
+		}
 
+		//while(characters[0].getLifePoints() != 0 && characters[1].getLifePoints())
 	}
 
 }

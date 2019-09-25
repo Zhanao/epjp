@@ -49,6 +49,10 @@ public class Simple {
 }
 
 class MyNegateException extends Exception {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int alternativeValue;
 	
 	public MyNegateException(int alternativeValue) {

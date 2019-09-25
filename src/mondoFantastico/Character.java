@@ -36,7 +36,7 @@ public abstract class Character {
 	}
 	
 	public String getFullNameAndStats() {
-    	return "The complete name is " + name + " " + clanName + " and the stats is " + lifePoints;
+    	return "The complete name is " + name + " " + clanName + " and the life points are " + lifePoints;
 	}
 
 }
