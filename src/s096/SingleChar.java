@@ -1,25 +1,30 @@
 package s096;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
+
 
 public class SingleChar {
-	public List<Character> getSinglechar(String s) {
-		char[] c = s.toCharArray();
-		Arrays.sort(c);
-		List<Character> al = new ArrayList<>();
-		al.add(c[0]);
-		for (int i = 1; i < s.length(); i++) {
+	public TreeSet<Character> getSinglechar(String s) {
 
-			if (c[i] == c[i - 1]) {
-				continue;
-			} else {
-				al.add(c[i]);
-			}
+		TreeSet<Character> ts = new TreeSet<>();
+		for (int i = 0; i < s.length(); i++) {
+			ts.add(s.charAt(i));
 		}
-		return al;
+
+		return ts;
+
+//		Arrays.sort(c);
+//		List<Character> al = new ArrayList<>();
+//		al.add(c[0]);
+//		for (int i = 1; i < s.length(); i++) {
+//
+//			if (c[i] == c[i - 1]) {
+//				continue;
+//			} else {
+//				al.add(c[i]);
+//			}
+//		}
+//		return al;
 	}
-	
 
 }
