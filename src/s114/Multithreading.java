@@ -9,7 +9,9 @@ public class Multithreading {
             t.start();
         }
 
-        System.out.println("Main thread done");
+        System.out.println("Main thread done");// da notare che quando mando in esecuzione viene stampato prima
+        //questo che è nel main e poi gli altri. se lancio il programma più volte , stampa in ordine differente 
+        // a seconda delle priorità che hanno i 3 threads.
     }
 }
 
