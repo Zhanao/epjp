@@ -13,9 +13,19 @@ public abstract class Character {
 		this.lifePoints = lifePoints;
 	}
 	
+	public int dice(int faces) {
+		int result = (int) Math.round(Math.random()*(faces - 1) + 1);
+		return result;
+	}
+	
 	public int fight(int damage){
+		System.out.println("The damage is: " + damage);
 		return damage;
 	}
+	
+//	public int armor(int defence) {
+//		
+//	}
 	
 	public int getLifePoints() {
 		return lifePoints;
@@ -23,6 +33,10 @@ public abstract class Character {
 	
 	public String getFullName() {
 		return name + " " + clanName;
+	}
+	
+	public String getFullNameAndStats() {
+    	return "The complete name is " + name + " " + clanName + " and the stats is " + lifePoints;
 	}
 
 }

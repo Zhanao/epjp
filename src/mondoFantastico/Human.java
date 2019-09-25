@@ -9,6 +9,7 @@ public class Human extends Character {
 
 	public int fight(int damage) {
 		damage = damage + bonus; 
+		System.out.println("The damage is: " + damage);
 		return damage;
 	}
 }
