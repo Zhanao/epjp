@@ -9,17 +9,18 @@ public class MyList {
 		if (head == null) {
 			head = node;
 			return;
+		} 
+			Node cur = head;
+			Node next = cur.getNext();
+			while (next != null) {
+				cur = next;
+				next = next.getNext();
+				}
+			
+			cur.setNext(node);
 		}
-		
-		Node cur = head;
-		Node next = cur.getNext();
-		
-		while (next != null) {
-			cur = next;
-		}
-		cur.setNext(node);
 
-	}
+
 	
 	public int getSize() {
 		Node cur = head;
@@ -47,28 +48,43 @@ public class MyList {
 		return value;
 	}
 	
-//	public int Head() { //trova head
-//		return head.getValue();
-//	}
-//	
 	public int getHead() { //ridà la head
 		return head.getValue();
 	}
 	
-//	public MyList popHead() { //pop the head
-//		Node cur = head;
-//		Node next = cur.getNext();
-//		//Node next = cur.getNext();
-//		MyList poppedList = new MyList();
-//		while(cur != null) {
-//			if (cur.getNext() == head) {
-//				continue;
-//			} else {
-//				poppedList.add(cur.getValue());
-//			}
-//		}
-//		return poppedList;
-//	}
+	public MyList popHeadEst() { //pop the head
+		Node cur = head;
+		Node nextCur = cur.getNext();
+		MyList poppedList = new MyList();
+		while(nextCur != null) {
+			if (nextCur.getNext() == head) {
+				continue;	
+			} else if (nextCur.getNext() == null) {
+				poppedList.add(nextCur.getValue());
+				return poppedList;
+			} else {
+				poppedList.add(nextCur.getValue());
+				nextCur = nextCur.getNext();
+			}
+		}
+		return poppedList;
+	}
+	
+	public MyList popTailEst() { //pop the head
+		Node cur = head;
+		MyList poppedList = new MyList();
+		while(cur != null) {
+			if (cur.getNext() == head) {
+				continue;	
+			} else if (cur.getNext() == null) {
+				return poppedList;
+			} else {
+				poppedList.add(cur.getValue());
+				cur = cur.getNext();
+			}
+		}
+		return poppedList;
+	}
 	
 	public String toString() {
 		StringBuilder sb = new StringBuilder("[");
