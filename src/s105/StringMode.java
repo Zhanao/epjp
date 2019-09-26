@@ -2,12 +2,12 @@ package s105;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
+//import java.util.Scanner;
 import java.util.TreeSet;
 
 public class StringMode {
 	public static void main(String[] args) {
-		String string = "ottone";
+		String string = "acbccczzza";
 		System.out.println(getSimpleCharList(string));
 		System.out.println(getSimpleCharSet(string));
 //		System.out.println("Please insert a string:");
@@ -44,6 +44,33 @@ public class StringMode {
 		
 		TreeSet<Character> simpleCharListSet = new TreeSet<>(simpleCharList);
 		return simpleCharListSet;
+	}
+	
+	public static String getString(List<Character> listChar) {
+		StringBuilder resultSB = new StringBuilder("");
+		String resultString = "";
+		
+		for (int i = 0; i < listChar.size(); i++) {
+			resultSB.append((listChar.get(i)));
+		}
+		
+		resultString = resultSB.toString();
+		
+		return resultString;
+	}
+	
+	public static String getStringFromTree(TreeSet<Character> treeChar) {
+		StringBuilder resultSB = new StringBuilder("");
+		String resultString = "";
+		
+		while (!treeChar.isEmpty()) {
+			resultSB.append(treeChar.first());
+			treeChar.remove(treeChar.first());
+		}
+		
+		resultString = resultSB.toString();
+		
+		return resultString;
 	}
 	
 //	public static String getSimpleCharList(List<Character> list) {

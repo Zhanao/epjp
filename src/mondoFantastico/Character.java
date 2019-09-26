@@ -4,13 +4,14 @@ public abstract class Character {
 	private String name;
 	private String clanName;
 	public int lifePoints;
-	//private int armorClass;
+	public int armorClass;
 	
 
-	public Character(String name, String clanName, int lifePoints) {
+	public Character(String name, String clanName, int lifePoints, int armorClass) {
 		this.name = name;
 		this.clanName = clanName;
 		this.lifePoints = lifePoints;
+		this.armorClass = armorClass;
 	}
 	
 	public int dice(int faces) {
@@ -18,8 +19,14 @@ public abstract class Character {
 		return result;
 	}
 	
-	public int fight(int damage){
-		System.out.println("The damage is: " + damage);
+	public int fight(int diceFighter, int armorDefender){
+		int damage = 0;
+		if (dice(20) > armorDefender) {
+			damage = dice(diceFighter);
+			System.out.println("The offencer hits and caused " + damage + " of damage.");
+		} else {
+			System.out.println("The offencer tries to hit but missed the opponent.");
+		}
 		return damage;
 	}
 	
@@ -29,6 +36,11 @@ public abstract class Character {
 	
 	public int getLifePoints() {
 		return lifePoints;
+	}
+	
+	
+	public int getArmorClass() {
+		return armorClass;
 	}
 	
 	public String getFullName() {
