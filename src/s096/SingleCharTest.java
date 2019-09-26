@@ -17,9 +17,9 @@ class SingleCharTest {
 		 SingleChar c=new SingleChar();
 		 TreeSet<Character>  result=c.getSinglechar(al);
 		assertEquals(7, result.size());
-		System.out.println(result);
-//		assertThat(result.get(0),is('a'));
-//		assertThat(result.get(2),is('c'));
+//		System.out.println(result);
+		assertThat(result.contains('a'),is(true));
+		assertEquals(false, result.contains('g'));
 		
 		
 	}
