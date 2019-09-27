@@ -1,0 +1,6 @@
+package Yahtzee;
+
+public enum Combinazione {
+	UNO, DUE, TRE, QUATTRO, CINQUE, SEI, BONUS, PICCOLASCALA, GRANDESCALA, TRIS, DADIUGUALI4, FULL, YAHTZEE, CHANCE
+
+}
