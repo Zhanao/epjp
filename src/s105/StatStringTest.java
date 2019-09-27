@@ -2,6 +2,8 @@ package s105;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import org.junit.jupiter.api.Test;
 
 class StatStringTest {
@@ -32,6 +34,13 @@ class StatStringTest {
         int actual = StatString.getElementsNumber("ababcb");
 
         assertThat(actual, is(3));
+	}
+	
+	@Test
+	void testStatStringNull() {
+		IllegalArgumentException exc = assertThrows(IllegalArgumentException.class, () -> StatString.getStat(null));
+		
+		assertThat(exc.getMessage(), is("The string should not be empty."));
 	}
 
 }

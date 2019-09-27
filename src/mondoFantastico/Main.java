@@ -16,29 +16,29 @@ public class Main {
 		characters[4] = new Human(namesArray[(int) (Math.round(Math.random()*5))], clanNamesArray[(int) (Math.round(Math.random()*5))], 0, 0);
 		
 		
-		for(Character character : characters) {
-			if (character instanceof Human) {
-				System.out.println("This is a Human");
-				character.fight(Character.dice(6), character.getArmorClass());
-				Human h =(Human)character;
-				System.out.println(h.getFullNameAndStats());
-			}
-			if (character instanceof Ogre) {
-				System.out.println("This is a Ogre");
-				character.fight(Character.dice(6), character.getArmorClass());
-				Ogre o =(Ogre)character;
-				System.out.println(o.getFullNameAndStats());
-			}
-		}
-		
-		System.out.println(characters[1].getArmorClass()); //ci da la classe armatura
-		System.out.println(characters[1].getLifePoints()); //ci da i punti vita
-		
-		int damage = characters[1].fight(Character.dice(6), characters[1].getArmorClass()); //inizializza il danno
-		characters[1].lifePoints = characters[1].lifePoints - damage; //modifica la vita
+//		for(Character character : characters) {
+//			if (character instanceof Human) {
+//				System.out.println("This is a Human");
+//				character.fight(Character.dice(6), character.getArmorClass());
+//				Human h =(Human)character;
+//				System.out.println(h.getFullNameAndStats());
+//			}
+//			if (character instanceof Ogre) {
+//				System.out.println("This is a Ogre");
+//				character.fight(Character.dice(6), character.getArmorClass());
+//				Ogre o =(Ogre)character;
+//				System.out.println(o.getFullNameAndStats());
+//			}
+//		}
+//		
+//		System.out.println(characters[1].getArmorClass()); //ci da la classe armatura
+//		System.out.println(characters[1].getLifePoints()); //ci da i punti vita
+//		
+//		int damage = characters[1].fight(Character.dice(6), characters[1].getArmorClass()); //inizializza il danno
+//		characters[1].lifePoints = characters[1].lifePoints - damage; //modifica la vita
 		
 		System.out.println(characters[1].getLifePoints());
-		System.out.println(coupleDifferentIndexDices(2)[0] + "and" + coupleDifferentIndexDices(2)[1]);
+		System.out.println(coupleDifferentIndexDices(3)[0] + "and" + coupleDifferentIndexDices(3)[1]);
 
 //		while((characters[0].getLifePoints() != 0) && (characters[1].getLifePoints() != 0) && (characters[2].getLifePoints() != 0) && (characters[3].getLifePoints() != 0) && (characters[4].getLifePoints() != 0)) {
 //			int[] offenderAndDefencerArray = coupleDifferentIndexDices(5);
@@ -48,9 +48,13 @@ public class Main {
 	public static int[] coupleDifferentIndexDices(int faces) {
 		int resultFirst = Character.dice(faces) - 1;
 		int resultSecond = resultFirst;
-		while(resultFirst == resultSecond) {
-			resultSecond = Character.dice(faces) - 1;
-			}
+		if (resultFirst == resultSecond && resultFirst >= (faces - 1)) {
+			resultSecond = resultFirst - 1;
+		} if (resultFirst == resultSecond && resultFirst == 0) {
+			resultSecond = resultFirst + 1;
+		} if (resultFirst == resultSecond ) {
+			resultSecond = resultFirst + 1;
+		}
 		int[] resultArray = {resultFirst, resultSecond};
 		return resultArray;
 	}

@@ -7,7 +7,9 @@ import java.util.TreeSet;
 public class StatString {
 	public static void main(String[] args) {
 		String string = "abcbab";
+		//String stringNull = null;
 		System.out.println(getStat(string).toString());
+		//System.out.println(getStat(stringNull));
 	}
 
 	public static TreeSet<Character> getSimpleCharSet(String s) {
@@ -84,7 +86,7 @@ public class StatString {
 	}
 	
 	public static Stat getStat(String s) {
-		if ( s == null || s.isEmpty()) { throw new IllegalArgumentException("The string should not be empty."); }
+		if ( s == null  || s.isEmpty()) { throw new IllegalArgumentException("The string should not be empty."); }
 		
 		char mode = '0';
 		int frequency = 0;
