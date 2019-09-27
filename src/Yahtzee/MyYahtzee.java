@@ -4,38 +4,55 @@ import java.util.Arrays;
 import java.util.TreeSet;
 import java.util.stream.IntStream;
 
-import com.sun.java.swing.plaf.windows.WindowsInternalFrameTitlePane.ScalableIconUIResource;
-import com.sun.prism.paint.Gradient;
-
 public class MyYahtzee {
 
 	public int myYahtzee(int[] dice, Combinazione c) {
-		
-		MyYahtzee yz=new MyYahtzee();
-		
+
+		MyYahtzee yz = new MyYahtzee();
+
 		switch (c) {
-		case UNO: 
-			break;
-			
+		case UNO:
+			return yz.getOnes(dice);
+
 		case DUE:
-			break;
+			return yz.getTwos(dice);
+			
 		case TRE:
-			break;
+			return yz.getThrees(dice);
+			
 		case QUATTRO:
-			break;
+			return yz.getFours(dice);
+
 		case CINQUE:
-			break;
+			return yz.getFives(dice);
+
 		case SEI:
-			break;
+			return yz.getSixs(dice);
+
 		case PICCOLASCALA:
-			break;		case GRANDESCALA:
-				break;		case TRIS:
-					break;	case DADIUGUALI4:
-						break;	case FULL:
-							break;	case YAHTZEE:
-								break;	case CHANCE:
-			break;
+			return yz.getLittleSt(dice);
+			
+		case GRANDESCALA:
+			return yz.getGreatSt(dice);
+			
+		case TRIS:
+			return yz.getTris(dice);
+			
+		case DADIUGUALI4:
+			return yz.getSamedice4(dice);
+			
+		case FULL:
+			return yz.getFull(dice);
+			
+		case YAHTZEE:
+			return yz.getYahtzee(dice);
+			
+		case CHANCE:
+			return yz.getChance(dice);
+
 		}
+		return 0;
+	}
 
 	private int getOnes(int[] dice) {
 		int score = 0;
@@ -106,7 +123,7 @@ public class MyYahtzee {
 		Arrays.sort(dice);
 
 		for (int i = 0; i < 2; i++) {
-			if (dice[i] == dice[i + 1] - 1 && dice[i + 1] == dice[i + 2] - 1) {
+			if (dice[i] == dice[i + 1] - 1 && dice[i + 1] == dice[i + 2] - 1 && dice[i + 2] == dice[i + 3] - 1) {
 				return 30;
 			}
 		}
@@ -143,7 +160,7 @@ public class MyYahtzee {
 
 		Arrays.sort(dice);
 
-		int count = 0;
+		int count = 1;
 		for (int i = 0; i < dice.length - 1; i++) {
 			if (dice[i] == dice[i + 1]) {
 				count++;
