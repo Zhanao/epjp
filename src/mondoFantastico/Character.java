@@ -10,13 +10,12 @@ public abstract class Character {
 	public Character(String name, String clanName, int lifePoints, int armorClass) {
 		this.name = name;
 		this.clanName = clanName;
-		this.lifePoints = lifePoints;
-		this.armorClass = armorClass;
+//		this.lifePoints = lifePoints;
+//		this.armorClass = armorClass; se metto queste due righe non randomizza la vita e l'armatura inizializzate in questa classe
 	}
 	
-	public int dice(int faces) {
-		int result = (int) Math.round(Math.random()*(faces - 1) + 1);
-		return result;
+	public static int dice(int faces) {
+		return (int) Math.round(Math.random()*(faces - 1) + 1);
 	}
 	
 	public int multipleDices(int faces, int times) {

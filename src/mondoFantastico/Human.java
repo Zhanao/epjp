@@ -2,12 +2,11 @@ package mondoFantastico;
 
 public class Human extends Character {
 	private int bonusDamage =  dice(4);
-	private int armorClass = 10 + bonusDex;
 	
 	public Human(String name, String clanName, int lifePoints, int armorClass) {
-		super(name, clanName, 0, 0);
-		this.lifePoints = super.lifePoints;
-		this.armorClass = 10 + bonusDex;
+		super(name, clanName, lifePoints, armorClass);
+//		this.lifePoints = lifePoints;
+//		this.armorClass = armorClass;
 	}	
 	
 //	public Human(String name, String clanName, int lifePoints, int armorClass, int bonusDamage) {
@@ -27,20 +26,4 @@ public class Human extends Character {
 		return damage;
 	}
 	
-//	public int getLifePoints() {
-//		return lifePoints;
-//	}
-//	
-//	
-//	public int getArmorClass() {
-//		return armorClass;
-//	}
-//	
-//	public String getFullName() {
-//		return name + " " + clanName;
-//	}
-//	
-//	public String getFullNameAndStats() {
-//    	return "The complete name is " + name + " " + clanName + ", the life points are " + lifePoints + " and the armor class is " + armorClass;
-//	}
 }
