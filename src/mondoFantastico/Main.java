@@ -38,7 +38,9 @@ public class Main {
 //		characters[1].lifePoints = characters[1].lifePoints - damage; //modifica la vita
 		
 		System.out.println(characters[1].getLifePoints());
-		System.out.println(coupleDifferentIndexDices(3)[0] + "and" + coupleDifferentIndexDices(3)[1]);
+		
+		int[] arrayIndex = coupleDifferentIndexDices(5);
+		System.out.println(arrayIndex[0] + "and" + arrayIndex[1]);
 
 //		while((characters[0].getLifePoints() != 0) && (characters[1].getLifePoints() != 0) && (characters[2].getLifePoints() != 0) && (characters[3].getLifePoints() != 0) && (characters[4].getLifePoints() != 0)) {
 //			int[] offenderAndDefencerArray = coupleDifferentIndexDices(5);
@@ -47,13 +49,9 @@ public class Main {
 	
 	public static int[] coupleDifferentIndexDices(int faces) {
 		int resultFirst = Character.dice(faces) - 1;
-		int resultSecond = resultFirst;
-		if (resultFirst == resultSecond && resultFirst >= (faces - 1)) {
-			resultSecond = resultFirst - 1;
-		} if (resultFirst == resultSecond && resultFirst == 0) {
-			resultSecond = resultFirst + 1;
-		} if (resultFirst == resultSecond ) {
-			resultSecond = resultFirst + 1;
+		int resultSecond = Character.dice(faces) - 1;
+		while (resultFirst == resultSecond) {
+			resultSecond = Character.dice(faces) - 1;
 		}
 		int[] resultArray = {resultFirst, resultSecond};
 		return resultArray;
