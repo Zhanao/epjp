@@ -1,2 +1,2 @@
-select first_name || ' ' || last_name as "Employee's name"
+select first_name || ' ' || last_name  || ' ' || '@emp.com' as "Employee's name"
 from employees;
