@@ -188,3 +188,26 @@ select e.last_name as employee, m.last_name as manager
 from employees e join employees m --nel caso della self join alias è d'obbligo
 on (e.manager_id = m.employee_id);
 
+select employee_id, city, department_name
+from employees e join departments d on d.department_id = e.department_id
+join locations l on d.location_id = l.location_id;
+
+select employee_id, city, department_name --dato che voglio 3 dati che provengono da 3 tabelle differenti, non c è bisogno di 
+from employees join departments using (department_id) -- specificare le colonne da quale tabella, perchè non cè ambiguità
+join locations using (location_id);
+
+
+select e.last_name, e.salary, j.min_salary
+from employees e join jobs j
+on(e.salary between j.min_salary and j.min_salary + 100)
+where(e.job_id = j.job_id);
+
+select first_name, last_name, department_name
+from employees left outer join departments
+using(department_id)
+where last_name = 'Grant';
+
+select first_name, last_name, department_name
+from employees right outer join departments -- considera anche treasury che non ha dipendenti in quel dipartimento
+using(department_id)
+where department_id between 110 and 120;

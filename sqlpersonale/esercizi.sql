@@ -41,7 +41,8 @@ where commission_pct is not null;
 
 select first_name||' '||last_name , employee_id
 from employees
-where first_name like ('%a%') or first_name like ('A%') or last_name like ('%a%') or last_name like ('A%')
+--where first_name like ('%a%') or first_name like ('A%') or last_name like ('%a%') or last_name like ('A%')
+where regexp_like(last_name,'[Aa].*')
 order by (1);
 
 select department_name
