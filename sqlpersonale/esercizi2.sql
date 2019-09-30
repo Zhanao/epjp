@@ -30,14 +30,27 @@ where manager_id is null;
 
 select e.first_name||' '||e.last_name as employee, m.first_name||' '||m.last_name as manager
 from employees e join employees m
-on (m.manager_id=e.employee_id)
+on (e.manager_id=m.employee_id)
 order by 2;
 
---sbagliata
-select e.first_name||' '||e.last_name as nomanager, e.employee_id
+
+
+select e.last_name, e.employee_id
 from employees e join employees m
 on (e.manager_id = m.employee_id)
-where m.employee_id not in (e.manager_id) or e.manager_id is not null;
+where e.employee_id not in (m.manager_id)
+--where m.manager_id != e.employee_id and m.manager_id is not null
+order by 2;
+
+select e.last_name, e.employee_id
+from employees e
+where employee_id not in
+(select manager_id from employees where manager_id is not null);
+-- perche' non vengono uguali?!?
+
+select e.last_name as employee, m.last_name as manager
+from employees e join employees m
+on (e.manager_id = m.employee_id);
 
 select *
 from employees

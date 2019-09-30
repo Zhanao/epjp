@@ -1,10 +1,10 @@
 select abs(10), abs(-10)
 from dual;
 
-select ceil(5.8), ceil(-5.2)
+select ceil(5.8), ceil(-5.8)
 from dual;
 
-select floor(5.8), floor(-5.2)
+select floor(5.8), floor(-5.8)
 from dual;
 
 select mod(8, 3), mod(8, 4)

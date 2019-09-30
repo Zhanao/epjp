@@ -7,7 +7,7 @@ from dual;
 select last_day(sysdate)
 from dual;
 
-select next_day(sysdate, 'lun')
+select next_day(sysdate, 'mon')
 from dual;
 
 select round(sysdate, 'year'), round(sysdate, 'month')

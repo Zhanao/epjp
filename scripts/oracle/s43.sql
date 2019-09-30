@@ -4,7 +4,7 @@ from dual;
 select to_char(2019, 'RN')
 from dual;
     
-select to_number('970,13') * 2
+select to_number('970.13') * 2
 from dual;
 
 select cast('05-APR-19' as date) + 2
