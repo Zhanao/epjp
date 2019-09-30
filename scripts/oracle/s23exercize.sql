@@ -1,6 +1,10 @@
 select *
 from employees
-where hire_date between '01-GEN-05' and '31-DIC-05';
+where hire_date between '01-GEN-2005' and '31-DIC-2005';
+
+select *
+from employees
+where trunc(hire_date, 'year') = '01-GEN-05';
 
 select job_id
 from employees;
@@ -16,6 +20,11 @@ where commission_pct is not null;
 SELECT *
 FROM employees
 where first_name like '%a%' or last_name like '%a%' or last_name like '%A%'or last_name like '%A%';
+
+SELECT *
+FROM employees
+where regexp_like(first_name, '*[Aa].*') or regexp_like(last_name, '*[Aa].*');
+
 
 select *
 from departments
