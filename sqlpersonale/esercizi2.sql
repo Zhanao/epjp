@@ -57,5 +57,13 @@ from employees
 --where hire_date between '01-GEN-2005' and '31-DIC-2005';
 where TRUNC(hire_date,'year') = '01-GEN-05';
 
+select employee_id,first_name||' '||last_name as employer, lpad('*',round(salary/1000), '*') salary
+from employees
+order by 1;
+
+select employee_id,first_name||' '||last_name as employer, nvl2(commission_pct,to_char(commission_pct,'0.99'),'no value')
+-- 0.99 è il formato che voglio dare
+from employees
+order by 1;
 
 

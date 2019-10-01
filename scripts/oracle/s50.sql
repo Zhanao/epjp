@@ -5,8 +5,8 @@ where employee_id = (
 	from employees
 	where last_name = 'Chen');
 
-select department_id, trunc(avg(salary))
-from employees
+select department_id, trunc(avg(salary)) -- voglio vedere i salari medi per dipartimento togliendo di mezzo quello del manager
+from employees -- ovvero quello col salario medio maggiore
 group by department_id having avg(salary) < (
     select max(avg(salary))
     from employees
