@@ -42,8 +42,8 @@ where e.employee_id not in (m.manager_id)
 --where m.manager_id != e.employee_id and m.manager_id is not null
 order by 2;
 
-select e.last_name, e.employee_id
-from employees e
+select first_name||' '||last_name, employee_id
+from employees 
 where employee_id not in
 (select manager_id from employees where manager_id is not null);
 -- perche' non vengono uguali?!?
