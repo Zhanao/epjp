@@ -57,4 +57,21 @@ where hire_date>(select e.hire_date from employees e join employees m on (e.mana
 select e.first_name||' '||e.last_name employer,e.hire_date hiree,m.hire_date hirem, m.first_name||' '||m.last_name manager
 from employees e join employees m 
 on (e.manager_id=m.employee_id) 
-where e.hire_date>m.hire_date ;
+where e.hire_date<m.hire_date ;
+
+select first_name||' '||last_name
+from employees
+where manager_id=(select manager_id from employees where first_name='Lisa' and last_name='Ozer');
+
+select first_name||' '||last_name, department_id
+from employees
+where department_id in (select department_id from employees where REGEXP_LIKE(last_name,'[u]','i'));
+
+select first_name||' '||last_name, department_name
+from employees join departments
+using(department_id)
+where departments.department_name='Shipping';
+
+select first_name||' '||last_name
+from employees
+where manager_id=(select employee_id from employees where first_name='Steven' and last_name='King');
