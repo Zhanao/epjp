@@ -33,8 +33,22 @@ select e.last_name as employee, m.last_name as manager
 from employees e join employees m
 on (e.manager_id = m.employee_id);
 
-select e.last_name, e.employee_id
-from employees e
-where employee_id not in
-(select manager_id from employees where manager_id is not null);
+select distinct manager_id 
+from employees 
+where manager_id is not null;
+
+select last_name, employee_id
+from employees
+where employee_id not in (
+    select distinct manager_id 
+    from employees 
+    where manager_id is not null);
+    
+--al posto del count(*) si può mettere select count(rowid) con il * è da pigri
+select count(*)
+from employees
+where employee_id not in (
+    select distinct manager_id 
+    from employees 
+    where manager_id is not null);
 
