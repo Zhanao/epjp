@@ -74,4 +74,5 @@ where departments.department_name='Shipping';
 
 select first_name||' '||last_name
 from employees
-where manager_id=(select employee_id from employees where first_name='Steven' and last_name='King');
+where manager_id in(select employee_id from employees where first_name='Steven' and last_name='King');
+
