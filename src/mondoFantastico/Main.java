@@ -42,9 +42,9 @@ public class Main {
 		int[] arrayIndex = coupleDifferentIndexDices(5);
 		System.out.println(arrayIndex[0] + "and" + arrayIndex[1]);
 
-//		while((characters[0].getLifePoints() != 0) && (characters[1].getLifePoints() != 0) && (characters[2].getLifePoints() != 0) && (characters[3].getLifePoints() != 0) && (characters[4].getLifePoints() != 0)) {
-//			int[] offenderAndDefencerArray = coupleDifferentIndexDices(5);
-//		}
+		while((characters[0].getLifePoints() != 0) || (characters[1].getLifePoints() != 0) || (characters[2].getLifePoints() != 0) || (characters[3].getLifePoints() != 0) || (characters[4].getLifePoints() != 0)) {
+			int[] offenderAndDefencerArray = coupleDifferentIndexDices(5);
+		}
 	}
 	
 	public static int[] coupleDifferentIndexDices(int faces) {
