@@ -3,3 +3,6 @@ create table items (
     status char,
     name varchar2(20),
     coder_id integer);
+    
+select *
+from ITEMS;

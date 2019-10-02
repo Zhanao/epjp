@@ -19,6 +19,12 @@ values (105, 'A', 'Diana', 105);
 insert into items
 values (001, 'Y', 'Bill', 110);
 
+insert into items
+values (975, 'Y', 'Merlino', 142);
+
+insert into items
+values (561, 'X', 'Tunk', 143);
+
 --qua gli stiamo dicendo che non può fare alcune cose, nello specifico che non si possono mettere A, B, X
 alter table items
 add constraint items_status_ck check(status in ('A', 'Y', 'X'));
