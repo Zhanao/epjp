@@ -1,5 +1,7 @@
 drop table trainees;
 drop table courses;
+drop SEQUENCE trainee_sq;
+drop SEQUENCE course_sq;
 
 create table courses(
     course_id integer
@@ -22,56 +24,61 @@ create table trainees(
         constraint trainee_course_id_fk references courses(course_id) on delete set null,
         constraint trainee_first_last_name unique(first_name,last_name));
 
-insert into courses
-values (01,'Birreristica','Pavia');
+create SEQUENCE trainee_sq start with 1000 increment by 1;
+create SEQUENCE course_sq start with 100 increment by 1;
 
 insert into courses
-values (2,'Risottistica','Milano');
+values (course_sq.nextval,'Birreristica','Pavia');
 
 insert into courses
-values (3,'Arancinistica','Pavia');
+values (course_sq.nextval,'Risottistica','Milano');
 
 insert into courses
-values (4,'Gondolieria','Venezia');
+values (course_sq.nextval,'Arancinistica','Pavia');
 
 insert into courses
-values (5,'Pizza','Napoli');
+values (course_sq.nextval,'Gondolieria','Venezia');
 
 insert into courses
-values (6,'Mozzarellistica','Salerno');
+values (course_sq.nextval,'Pizza','Napoli');
+
+insert into courses
+values (course_sq.nextval,'Mozzarellistica','Salerno');
 
 insert into trainees
-values (10001,'Luciana', 'Uggetti','luciana.uggetti@accenture.it',3920000001, 4);
+values (trainee_sq.nextval,'Luciana', 'Uggetti','luciana.uggetti@accenture.it',3920000000+trainee_sq.nextval, 104);
 
 insert into trainees
-values (10002,'Zhanao', 'Wu','zhanao.wu@accenture.it',3920000002, 2);
+values (trainee_sq.nextval,'Zhanao', 'Wu','zhanao.wu@accenture.it',3920000000+trainee_sq.nextval, 102);
 
 insert into trainees
-values (10003,'Ilaria', 'Maggiolino','ilaria.maggiolino@accenture.it',3920000003, 4);
+values (trainee_sq.nextval,'Ilaria', 'Maggiolino','ilaria.maggiolino@accenture.it',3920000000+trainee_sq.nextval, 104);
 
 insert into trainees
-values (10004,'Chiara', 'Saporito','chiara.saporito@accenture.it',3920000004, 6);
+values (trainee_sq.nextval,'Chiara', 'Saporito','chiara.saporito@accenture.it',3920000000+trainee_sq.nextval, 106);
 
 insert into trainees
-values (10005,'Antonino', 'Scarfone','antonino.scarfone@accenture.it',3920000005, 3);
+values (trainee_sq.nextval,'Antonino', 'Scarfone','antonino.scarfone@accenture.it',3920000000+trainee_sq.nextval, 103);
 
 insert into trainees
-values (10006,'Marco', 'Blanco','marco.blaco@accenture.it',3920000006, 3);
+values (trainee_sq.nextval,'Marco', 'Blanco','marco.blaco@accenture.it',3920000000+trainee_sq.nextval, 103);
 
 insert into trainees
-values (10007,'Giovanni', 'Maggi','giovanni.maggi@accenture.it',3920000007, 1);
+values (trainee_sq.nextval,'Giovanni', 'Maggi','giovanni.maggi@accenture.it',3920000000+trainee_sq.nextval, 101);
 
 insert into trainees
-values (10008,'Sergio', 'Evangelista','sergio.evangelista@accenture.it',3920000008, 1);
+values (trainee_sq.nextval,'Sergio', 'Evangelista','sergio.evangelista@accenture.it',3920000000+trainee_sq.nextval, 101);
 
 insert into trainees
-values (10009,'Paolo', 'Riva','paolo.riva@accenture.it',3920000009, 2);
+values (trainee_sq.nextval,'Paolo', 'Riva','paolo.riva@accenture.it',3920000000+trainee_sq.nextval, 102);
 
 insert into trainees
-values (10010,'Edoardo', 'Errani','edoardo.errani@accenture.it',3920000010, 5);
+values (trainee_sq.nextval,'Edoardo', 'Errani','edoardo.errani@accenture.it',3920000000+trainee_sq.nextval, 105);
 
 insert into trainees
-values (10011,'Alessandro', 'Armato','alessandro.armato@accenture.it',3920000011, 5);
+values (trainee_sq.nextval,'Alessandro', 'Armato','alessandro.armato@accenture.it',3920000000+trainee_sq.nextval, 105);
+
+
 
 
 COMMIT;
