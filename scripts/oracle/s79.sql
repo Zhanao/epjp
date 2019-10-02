@@ -1,5 +1,7 @@
 set serveroutput on
 
+
+--il %type serve per prendere lo stesso tipo da dove sto prendendo il dato
 declare
     v_first_name coders.first_name%type;
     v_last_name coders.last_name%type;

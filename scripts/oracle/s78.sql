@@ -1,5 +1,7 @@
 set serveroutput on
 
+
+--i loop for incrementano solamente di 1 e non possiamo cambiare la cosa
 declare
     v_x integer;
 begin
