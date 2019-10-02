@@ -3,15 +3,13 @@ package mondoFantastico;
 public abstract class Character {
 	public String name;
 	public String clanName;
-	public int lifePoints = 10 + multipleDices(10, 10);
+	public int lifePoints = 10 + multipleDices(10, 5);
 	public int bonusDex = dice(7) - 2;
 	public int armorClass = 10 + bonusDex;
 
 	public Character(String name, String clanName, int lifePoints, int armorClass) {
 		this.name = name;
 		this.clanName = clanName;
-//		this.lifePoints = lifePoints;
-//		this.armorClass = armorClass; se metto queste due righe non randomizza la vita e l'armatura inizializzate in questa classe
 	}
 	
 	public static int dice(int faces) {
@@ -26,13 +24,13 @@ public abstract class Character {
 		return result;
 	}
 	
-	public int fight(int diceFighter, int armorDefender){
+	public int fight(int diceFighter, int armorDefender, Character offender, Character defender){
 		int damage = 0;
-		if (dice(20) > armorDefender) {
-			damage = dice(diceFighter);
-			System.out.println("The offender hits and caused " + damage + " of damage.");
+		if ((dice(20) + 5) > armorDefender) {
+			damage = dice(diceFighter) + 5;
+			System.out.println(offender.getFullName() + " attacks " + defender.getFullName() + "and caused " + damage + " of damage, the life remaining is " + defender.getLifePoints() + ".");
 		} else {
-			System.out.println("The offender tries to hit but missed the opponent.");
+			System.out.println(offender.getFullName() + " tries to hit " + defender.getFullName() + " but misses it.");
 		}
 		return damage;
 	}
