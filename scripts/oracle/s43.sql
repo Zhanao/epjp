@@ -10,5 +10,8 @@ from dual;
 select cast('05-APR-19' as date) + 2
 from dual;
 
+select sysdate + 2
+from dual;
+
 select cast(12345.678 as number(10,2))
 from dual;
