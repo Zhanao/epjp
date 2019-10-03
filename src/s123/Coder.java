@@ -1,5 +1,5 @@
 package s123;
-
+// è una java bin, ovvero una classe che mi contiene solo delle info
 public class Coder {
     private String firstName;
     private String lastName;
