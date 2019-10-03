@@ -1,4 +1,4 @@
-create table characters (
+ create table characters (
     character_id integer
         constraint character_pk primary key,
     first_name varchar2(20)
