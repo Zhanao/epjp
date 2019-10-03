@@ -1,14 +1,16 @@
 package s123;
 
+//questa classe è un java bean, cioè un mero contenitore
+
 public class Coder {
     private String firstName;
     private String lastName;
-    private int salary;
+    private double salary;
 
     public Coder() {
     }
 
-    public Coder(String firstName, String lastName, int salary) {
+    public Coder(String firstName, String lastName, double salary) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.salary = salary;
@@ -22,7 +24,7 @@ public class Coder {
         this.lastName = lastName;
     }
 
-    public void setSalary(int salary) {
+    public void setSalary(double salary) {
         this.salary = salary;
     }
 
@@ -34,7 +36,7 @@ public class Coder {
         return lastName;
     }
 
-    public int getSalary() {
+    public double getSalary() {
         return salary;
     }
 

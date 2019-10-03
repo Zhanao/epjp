@@ -20,3 +20,8 @@ drop table coders;
     
 select *
 from coders;
+
+insert into coders
+values (207, null, 'Callister', sysdate, 6005.89);
+
+commit;

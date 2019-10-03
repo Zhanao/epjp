@@ -16,8 +16,9 @@ public class Selector {
 	public List<String> getCoderNames() throws SQLException {
 		try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD); //
 				Statement stmt = conn.createStatement()) {
-			ResultSet rs = stmt.executeQuery("SELECT first_name FROM coders ORDER BY 1");
-
+			ResultSet rs = stmt.executeQuery("SELECT first_name FROM coders ORDER BY 1"); //manca il ; finale, questo lo mette jdbc
+							//il risultato della query viene messo dentro un resultset che è come un cursor
+							//jdbc se qualcosa va storto ritorna una eccezione, ma dobbiamo mettere una checked exception che è un po' pesante
 			List<String> results = new ArrayList<>();
 			while (rs.next()) {
 				results.add(rs.getString(1));
@@ -28,13 +29,14 @@ public class Selector {
 	}
 
 	public List<Coder> getCoders() throws SQLException {
-		try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD); //
+		try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD); //questa è una tries with resources e la cosa bella è che chiude le risorse da solo così si allegerisce tutto
 				Statement stmt = conn.createStatement()) {
 			ResultSet rs = stmt.executeQuery("SELECT first_name, last_name, salary FROM coders ORDER BY 1");
 
 			List<Coder> results = new ArrayList<>();
 			while (rs.next()) {
-				results.add(new Coder(rs.getString(1), rs.getString(2), rs.getInt(3)));
+				results.add(new Coder(rs.getString(1), rs.getString(2), rs.getDouble(3)));
+				//rs.get[tipo] per prendere un tipo specifico di dato, il Blob è meglio BLOb sta per Binary Large Object e viene usato le immagini o i video
 			}
 
 			return results;
