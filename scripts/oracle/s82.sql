@@ -26,5 +26,18 @@ exception
 end;
 /
 
+declare
+    v_id coders.coder_id%type := 8000;
+    v_salary coders.salary%type;
+begin
+    get_coder_salary(v_id, v_salary);
+    dbms_output.put_line('Salary is ' || v_salary);
+exception
+    when others then
+        dbms_output.put_line('Can''t get salary for ' || v_id);
+end;
+/
+
 -- just for demonstration
 drop procedure get_coder_salary;
+drop function increase_salary;
