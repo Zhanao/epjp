@@ -6,31 +6,23 @@ create or replace procedure tomorrow
     dbms_output.put_line('La data di domani è ' || (sysdate+1));
     end tomorrow;
 /
-
-declare
-v_nextday date;
     
 begin
 tomorrow();
---tomorrow(v_nextday);
---dbms_output.put_line('La data di domani è ' || v_nextday);
 end;
 /
 
 create or replace procedure tomorrow1(
-    p_name in varchar2) is
+    p_name in varchar2) is -- dato che è un paramentro non devo specificare la lunghezza
     begin
-        
-        dbms_output.put_line('Ciao '|| p_name || ' la data di domani è ' || (sysdate+1));
+        dbms_output.put_line('Ciao '|| p_name || ' la data di domani è ' || (sysdate+1)); -- (sysdate+1) va messa tra parentesi, altrimenti vince la concatenzazione sul '+'
     end tomorrow1;
 /
 
 declare
 v_name varchar2(20):='GIGI';
     begin
-
     tomorrow1(v_name);
-
 end;
 /
 
