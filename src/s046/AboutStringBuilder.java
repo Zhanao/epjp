@@ -6,9 +6,9 @@ public class AboutStringBuilder {
         StringBuilder sb2 = new StringBuilder(20);
         StringBuilder sb3 = new StringBuilder("hello");
         
-        System.out.println("capacity 1: " + sb.capacity());
+        System.out.println("capacity 1: " + sb.capacity());//attenzione che capacità massima è diverso dal length effettivo
         System.out.println("capacity 2: " + sb2.capacity());
-        System.out.println("capacity 3: " + sb3.capacity()); //16+5
+        System.out.println("capacity 3: " + sb3.capacity()); //16+5 16 è di default
         
         System.out.println("appending: " + sb3.append(' ').append("world"));
         

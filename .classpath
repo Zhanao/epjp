@@ -4,6 +4,7 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="test"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
-	<classpathentry kind="lib" path="D:\ComputerScience\workspace\ojdbc10-full\ojdbc10.jar"/>
+	<classpathentry kind="lib" path="D:/ComputerScience/workspace/ojdbc10-full/ojdbc10.jar" sourcepath="C:/dev/eclipse-jee-2019-09-R-win32-x86_64/eclipse/ojdbc10.jar"/>
+	<classpathentry kind="lib" path="C:/dev/eclipse-jee-2019-09-R-win32-x86_64/eclipse/ojdbc10.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
